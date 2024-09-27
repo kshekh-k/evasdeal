@@ -14,6 +14,12 @@ const config: Config = {
         dm: ["var(--dmsans)", ...defaultTheme.fontFamily.sans],
     },
       colors: {
+        primary:
+        {
+          DEFAULT:'#00BF89', 
+          2: '#006A53'
+        },
+
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
