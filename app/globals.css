@@ -7,6 +7,57 @@
   --foreground: #171717;
 }
 
+.bg-gray-11 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 243 243 / var(--tw-bg-opacity));
+}
+
+.primary-bg-color,
+.primary-bg-hover:hover {
+  background-color: #fcca19 !important;
+}
+
+.layout-wrapper {
+  max-width: 1400px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-11 {
+  font-size: 11px;
+}
+
+.text-8 {
+  font-size: 8px;
+}
+
+.text-xss {
+  font-size: 10px;
+}
+
+.line-clamp,
+.line-clamp-double {
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp,
+.line-clamp-double,
+.line-clamp-single {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.flash-item {
+  display: none;
+  transition: opacity 0.5s ease 0.5s;
+}
+
+.mainflash-1:hover .flash-item {
+  display: block;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -14,7 +65,7 @@
   }
 }
 
- 
+
 
 @layer utilities {
   .text-balance {
