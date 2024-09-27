@@ -11,7 +11,7 @@ function Footer() {
     <footer>
       <section className="bg-gray-12 text-white mt-5 bg-[#2c2c2c]">
         <footer className="body-font pb-30p sm:pb-11 layout-wrapper px-4 xl:px-0">
-          <div className="flex flex-wrap lg:flex-nowrap gap-7 pt-12 justify-start">
+          <div className="flex flex-wrap lg:flex-nowrap gap-7 pt-12 justify-start max-w-screen-xl mx-auto">
             <div className="w-full sm:w-1/3 md:w-1/5 order-1">
               <div className="flex-shrink-0 md:mx-0 mx-auto">
                 <div className="flex">
@@ -32,12 +32,12 @@ function Footer() {
                 <p className="text-base dm-regular break-all">Download Our App</p>
                 <div className="flex space-x-2 md:flex-col md:space-x-0 c-flex">
                   <div className="flex xs:justify-center md:justify-start">
-                    <Link href="https://play.google.com/store/games" className="mt-15p" target="_blank">
+                    <Link href="#" className="mt-15p" target="_blank">
                       <Image className="w-263p sm:w-32 neg-transition-scale" width={1000} height={1000} src="/extra/app-store.webp" alt="Image" />
                     </Link>
                   </div>
                   <div className="flex xs:justify-center md:justify-start">
-                    <Link href="https://www.apple.com/app-store/" className="md:mt-11p mt-15p" target="_blank">
+                    <Link href="#" className="md:mt-11p mt-15p" target="_blank">
                       <Image className="w-263p sm:w-32 neg-transition-scale" width={1000} height={1000} src="/extra/app-store-1.webp" alt="Image" />
                     </Link>
                   </div>
@@ -50,42 +50,42 @@ function Footer() {
                 <p className="mb-4 font-medium text-base dm-sans break-all">
                   Useful Links
                 </p>
-                <Link href="https://demo.martvill.techvill.net/page/about-us">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     About Us
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/contact-us">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Contact Us
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/privacy-policy">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Privacy Policy
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/refund-policy">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Refund Policy
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/digital-payments">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Digital Payment
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/track-order">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Track Order
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/search-products">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     All Products
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/seller/sign-up">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Be A Seller
                   </li>
@@ -97,42 +97,42 @@ function Footer() {
                 <p className="mb-4 font-medium text-base dm-sans break-all">
                   Home Pages
                 </p>
-                <Link href="https://demo.martvill.techvill.net/page/home-1">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Homepage - Mixed
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/home-3">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Homepage - Furniture
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/home-6">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Homepage - Digital Product
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/home-7">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Homepage - Groceries
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/home-8">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Homepage - Fashion - I
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/home-5">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Homepage - Fashion - II
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/home-2">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Homepage - Fashion - III
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/page/home-4">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Homepage - Fashion - IV
                   </li>
@@ -144,42 +144,42 @@ function Footer() {
                 <p className="mb-4 font-medium text-base dm-sans break-all">
                   Categories
                 </p>
-                <Link href="https://demo.martvill.techvill.net/search-products?categories=Electronic%20Devices">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Electronics Devices
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/search-products?categories=Electronic%20Accessories">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Electronics Accessories
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/search-products?categories=Health%20%26%20Beauty">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Health and Beauty
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/search-products?categories=Babies%20%26%20Toys">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Babies and Toys
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/search-products?categories=Fashion">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Fashion for All
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/search-products?categories=Watches%20%26%20Accessories">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Watches &amp; Accessories
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/search-products?categories=Sports%20%26%20Outdoor">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Sports and Outdoor
                   </li>
                 </Link>
-                <Link href="https://demo.martvill.techvill.net/search-products?categories=Automotive%20%26%20Motorbike">
+                <Link href="#">
                   <li className="hover:text-orange-500 cursor-pointer transition-all break-all">
                     Automobile &amp; Bicycles
                   </li>
@@ -252,14 +252,14 @@ function Footer() {
                   <Link href="https://www.instagram.com" title="Instagram" target="_blank" className="primary-bg-hover hover:text-gray-800 text-white flex items-center justify-center w-8 h-8 bg-gray-600 p-2 rounded-full social-transition">
                     <Image className=" w-6" src="/extra/instagram.svg" alt="Instagram" width={1000} height={1000} />
                   </Link>
-                  <Link href="https://www.telegram.org" title="Telegram" target="_blank" className="primary-bg-hover hover:text-gray-800 text-white flex items-center justify-center w-10 h-10 bg-gray-600 p-2 rounded-full social-transition">
-                    <Image className=" w-16" src="/extra/telegram.svg" alt="Telegram" width={1000} height={1000} />
+                  <Link href="https://www.telegram.org" title="Telegram" target="_blank" className="primary-bg-hover hover:text-gray-800 text-white flex items-center justify-center w-8 h-8 bg-gray-600 p-2 rounded-full social-transition">
+                    <Image className=" w-10" src="/extra/telegram.svg" alt="Telegram" width={1000} height={1000} />
                   </Link>
-                  <Link href="https://www.twitter.com" title="Twitter" target="_blank" className="primary-bg-hover hover:text-gray-800 text-white flex items-center justify-center w-10 h-10 bg-gray-600 p-2 rounded-full social-transition">
-                    <Image className=" w-16" src="/extra/twitter.svg" alt="Twitter" width={1000} height={1000} />
+                  <Link href="https://www.twitter.com" title="Twitter" target="_blank" className="primary-bg-hover hover:text-gray-800 text-white flex items-center justify-center w-8 h-8 bg-gray-600 p-2 rounded-full social-transition">
+                    <Image className=" w-10" src="/extra/twitter.svg" alt="Twitter" width={1000} height={1000} />
                   </Link>
-                  <Link href="https://www.quora.com" title="Quora" target="_blank" className="primary-bg-hover hover:text-gray-800 text-white flex items-center justify-center w-10 h-10 bg-gray-600 p-2 rounded-full social-transition">
-                    <Image className=" w-10" src="/extra/quora.svg" alt="Quora" width={1000} height={1000} />
+                  <Link href="https://www.quora.com" title="Quora" target="_blank" className="primary-bg-hover hover:text-gray-800 text-white flex items-center justify-center w-8 h-8 bg-gray-600 p-2 rounded-full social-transition">
+                    <Image className=" w-6" src="/extra/quora.svg" alt="Quora" width={1000} height={1000} />
                   </Link>
                   <Link href="https://www.linkedin.com" title="LinkedIn" target="_blank" className="primary-bg-hover hover:text-gray-800 text-white flex items-center justify-center w-8 h-8 bg-gray-600 p-2 rounded-full social-transition">
                     <Image className=" w-7" src="/extra/linkedin.svg" alt="LinkedIn" width={1000} height={1000} />
@@ -269,6 +269,13 @@ function Footer() {
             </div>
           </div>
         </footer>
+      </section>
+      <section className="bg-[#2c2c2c] text-white">
+        <div className="border-t border-gray-900 layout-wrapper px-4 xl:px-0">
+          <p className="md:py-3 py-7 font-medium text-center">
+            ©2024 Mart Vill | All Rights Reserved
+          </p>
+        </div>
       </section>
     </footer>
   )
