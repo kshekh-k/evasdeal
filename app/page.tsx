@@ -1,5 +1,7 @@
+import Footer from "./components/layout/footer";
 import Header from "./components/layout/header";
 import AppZone from "./components/ui/AppZone";
+import HomeBlog from "./components/ui/blog";
 import DigitalProduct from "./components/ui/digital-product";
 import FlashSale from "./components/ui/flash-sale";
 import FurnitureZone from "./components/ui/FurnitureZone";
@@ -18,6 +20,8 @@ export default function Home() {
       <AppZone />
       <DigitalProduct />
       <TopBrands />
+      <HomeBlog />
+      <Footer />
     </>
   );
 }
