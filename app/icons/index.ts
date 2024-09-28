@@ -1,5 +1,8 @@
 export { default as Phoneicon } from './svgs/phone-icon.svg'
+export { default as Phonelineicon } from './svgs/phone-line-icon.svg'
 export { default as Emailicon } from './svgs/email-icon.svg'
+export { default as Emaillineicon } from './svgs/email-line-icon.svg'
+export { default as Locationicon } from './svgs/location-icon.svg'
 export { default as Burgericon } from './svgs/burger-icon.svg'
 export { default as Beststaricon } from './svgs/best-stars-icon.svg'
 export { default as Compareicon } from './svgs/compare-icon.svg'

@@ -1,8 +1,9 @@
+'use client'
 // components/TopBrands.js
 
 import Image from 'next/image';
-
-const TopBrands = () => {
+export const TopBrands: React.FC = () => {
+ 
     return (
         <section className="layout-wrapper px-4 xl:px-0 my-10 md:my-12" style={{ marginTop: '', marginBottom: '' }}>
             <div className='max-w-screen-xl mx-auto'>
@@ -94,4 +95,4 @@ const TopBrands = () => {
     );
 };
 
-export default TopBrands;
+ 

@@ -36,12 +36,12 @@ export const Productcard: React.FC<ProductCard> = ({
                         <div className="relative flex flex-col gap-2">
                             <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-12 border border-gray-2 rounded-full hover:bg-primary bg-white"  >
 
-                               <Shoppingbagicon className="size-3" />
+                                <Shoppingbagicon className="size-3" />
 
                             </button>
 
                             <button className="h-6 w-6 flex justify-center items-center p-1  text-gray-12 relative hover:bg-primary border border-gray-2 rounded-full bg-white">
-                                <Hearticon className="size-3"/>
+                                <Hearticon className="size-3" />
                             </button>
 
                             <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-12 bg-white hover:bg-primary border border-gray-2 rounded-full">
@@ -63,9 +63,9 @@ export const Productcard: React.FC<ProductCard> = ({
                 </div>
             </div>
             <div className="sm:text-center flex flex-col">
-                <a href="https://demo.martvill.techvill.net/products/waist-straight-slouchy-jeans">
+                <Link href="#">
                     <p className="text-13 md:text-sm text-gray-12 md:mt-2 dm-regular line-clamp">{productName}</p>
-                </a>
+                </Link>
                 <div className="item-rating order-first md:order-none md:mt-0 mt-2">
                     <div className="flex gap-2 items-center justify-center">
                         <ul className="flex flex-wrap sm:justify-center items-center gap-1">
@@ -74,25 +74,25 @@ export const Productcard: React.FC<ProductCard> = ({
                             </li>
 
                             <li>
-                            <Staricon className="size-2" />
+                                <Staricon className="size-2" />
                             </li>
 
                             <li>
-                            <Staricon className="size-2" />
+                                <Staricon className="size-2" />
                             </li>
 
                             <li>
-                            <Staricon className="size-2" />
+                                <Staricon className="size-2" />
                             </li>
 
                             <li>
-                            <Staricon className="size-2" />
+                                <Staricon className="size-2" />
                             </li>
-</ul>
-                            <p className="text-gray-400 text-xs font-dm">
-                                (3 Reviews)
-                            </p>
-                        
+                        </ul>
+                        <p className="text-gray-400 text-xs font-dm">
+                            (3 Reviews)
+                        </p>
+
                     </div>
                 </div>
                 <div className='flex justify-center items-center gap-3'>
