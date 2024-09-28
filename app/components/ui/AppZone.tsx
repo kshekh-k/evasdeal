@@ -1,10 +1,9 @@
 // components/FurnitureZone.js
-
-import Image from 'next/image';
-import Link from 'next/link';
+'use client'
+import Image from 'next/image'; 
 import React from 'react';
-
-const AppZone = () => {
+export const AppZone: React.FC = () => {
+ 
     return (
         <section className="layout-wrapper px-4 xl:px-0 md:my-12 my-10" style={{ marginTop: '100px', marginBottom: '0' }}>
             <div className="flex flex-col max-w-screen-xl mx-auto md:flex-row md:gap-[30px] gap-[15px]">
@@ -60,4 +59,4 @@ const AppZone = () => {
     );
 };
 
-export default AppZone;
+ 

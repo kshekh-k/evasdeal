@@ -1,8 +1,9 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
 import { HiMiniBars3 } from 'react-icons/hi2'
-
-function Categories() {
+export const Categories: React.FC  = () => {
+ 
   return (
     <>
     <button className="relative w-full md:flex items-center border-r border-l cursor-pointer h-16 px-5 hidden bg-gray-50 text-gray-600 gap-4">
@@ -26,4 +27,4 @@ function Categories() {
   )
 }
 
-export default Categories
+ 

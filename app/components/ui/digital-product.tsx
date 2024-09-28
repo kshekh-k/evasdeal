@@ -1,9 +1,8 @@
 // components/FurnitureZone.js
-
-import Link from 'next/link';
+'use client' 
 import React from 'react';
-
-const DigitalProduct = () => {
+export const DigitalProduct: React.FC = () => {
+ 
     return (
         <section className="layout-wrapper px-4 xl:px-0 my-10 md:my-12" style={{ marginTop: '100px', marginBottom: '0px' }}>
             <div className='max-w-screen-xl mx-auto'>
@@ -56,7 +55,7 @@ const DigitalProduct = () => {
                                         <div className="w-full h-full hover-icon absolute top-0">
                                             <div className="w-full h-full flex justify-end cursor-pointer pt-15p ltr:pr-15p rtl:pl-15p">
                                                 <div slot="icon" className="relative">
-                                                    <a href="javascript:void(0)" className="add-to-cart relative z-20" data-itemcode="OHUf3UPUH4MIWl8">
+                                                    <a href="#" className="add-to-cart relative z-20" data-itemcode="OHUf3UPUH4MIWl8">
                                                         <div className="h-6 w-6 p-1 mb-2 text-gray-12 primary-bg-hover border border-gray-2 rounded-full bg-white">
                                                             <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path
@@ -187,7 +186,7 @@ const DigitalProduct = () => {
                                         <div className="w-full h-full hover-icon absolute top-0">
                                             <div className="w-full h-full flex justify-end cursor-pointer pt-15p ltr:pr-15p rtl:pl-15p">
                                                 <div slot="icon" className="relative">
-                                                    <a href="javascript:void(0)" className="add-to-cart relative z-20" data-itemcode="OHUf3UPUH4MIWl8">
+                                                    <a href="#" className="add-to-cart relative z-20" data-itemcode="OHUf3UPUH4MIWl8">
                                                         <div className="h-6 w-6 p-1 mb-2 text-gray-12 primary-bg-hover border border-gray-2 rounded-full bg-white">
                                                             <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path
@@ -305,4 +304,4 @@ const DigitalProduct = () => {
     );
 };
 
-export default DigitalProduct;
+ 

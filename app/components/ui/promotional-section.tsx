@@ -1,6 +1,7 @@
+'use client'
 import React from 'react';
 
-const PromotionalSection: React.FC = () => {
+export const PromotionalSection: React.FC = () => {
     return (
         <div>
             <section className=" max-w-screen-xl mx-auto px-4 xl:px-0 my-10 md:my-12">
@@ -114,4 +115,4 @@ const PromotionalSection: React.FC = () => {
     );
 };
 
-export default PromotionalSection;
+ 

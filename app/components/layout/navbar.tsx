@@ -1,10 +1,12 @@
+'use client'
 import Link from 'next/link'
 import React from 'react' 
 import { IoPhonePortraitOutline } from "react-icons/io5"
-import Categories from '../ui/categories'
-function Navbar() {
+import {Categories} from '../ui/categories'
+export const Navbar: React.FC = () => {
+ 
     return (
-        <div className='border-t border-gray-300'>
+        <div className='border-y border-gray-300'>
             <div className='container px-4 xl:px-5 flex justify-between w-full'>
                 <div className='group relative dm-sans lg:w-23% md:w-25% h-16 hidden md:block'>
                     <Categories />
@@ -39,4 +41,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+ 

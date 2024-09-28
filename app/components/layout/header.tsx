@@ -1,10 +1,11 @@
+'use client'
 import Link from "next/link"
-import Topbar from "../ui/top-bar"
-import Search from "../ui/search"
-import Image from "next/image"
-import { PiUser, PiHeartStraight, PiCompassLight } from "react-icons/pi"
-import { HiOutlineShoppingBag } from "react-icons/hi"
-function Header() {
+import {Topbar} from "../ui/top-bar"
+import {Search} from "../ui/search"
+import Image from "next/image" 
+import { Compassicon, Hearticon, Shoppingbagicon, Usericon } from "@/app/icons"
+export const Header: React.FC = () => {
+ 
     return (
         <header>
             {/* Top bar */}
@@ -25,7 +26,7 @@ function Header() {
                             <li className="hidden md:block ml-5">
                                 {/* unauthenticated */}
                                 <div className="flex flex-col gap-1 justify-center items-center cursor-pointer mt-2">
-                                    <PiUser className="size-5" />
+                                    <Usericon className="size-5" />
                                     <p
                                         style={{ color: "#898989" }}
                                         className="text-xs font-medium text-center  "
@@ -41,7 +42,7 @@ function Header() {
                                     <button
                                         className="md:px-2 lg:px-0 py-2 flex flex-col gap-1 w-fill justify-center items-center"
                                     >
-                                        <PiHeartStraight className="size-5" />
+                                        <Hearticon className="size-5" />
 
                                         <p
                                             style={{ color: "#898989" }}
@@ -56,7 +57,7 @@ function Header() {
 
                             <li className="absolute md:relative ml-5">
                                 <div className="flex flex-col justify-center gap-1 items-center md:px-2 lg:px-0 py-2 ">
-                                    <HiOutlineShoppingBag className="size-5" />
+                                    <Shoppingbagicon className="size-5" />
                                     <p
                                         style={{ color: "#898989" }}
                                         className="hidden md:block text-xs font-medium text-center whitespace-nowrap "
@@ -67,7 +68,7 @@ function Header() {
                             </li>
                             <li className=" ml-5">
                                 <div slot="icon" className="relative flex flex-col justify-center items-center md:px-2 lg:px-0 py-2 gap-1">
-                                    <PiCompassLight className="size-5"  />
+                                    <Compassicon className="size-5"  />
 
                                     <p style={{ color: "#898989" }}
                                         className="text-xs text-xss font-medium roboto-medium text-center whitespace-nowrap"
@@ -84,5 +85,4 @@ function Header() {
         </header>
     )
 }
-
-export default Header
+ 

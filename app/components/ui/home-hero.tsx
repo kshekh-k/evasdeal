@@ -4,22 +4,29 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-function Homehero() {
+import { Navigation } from 'swiper/modules';
+import Image from 'next/image';
+export const Homehero: React.FC = () => {
+ 
   return (
-    <section className='md:w-3/4 w-full -mt-2 ml-auto'>
-        <Swiper className="mySwiper">
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+    <section className='md:w-3/4 w-full -mt-2 ml-auto '>
+        <div className="overflow-hidden rounded-xl h-96">
+        <Swiper className="mySwiper h-full "  navigation={true} modules={[Navigation]}  pagination={{ clickable: true }}>
+        <SwiperSlide>
+            <Image src={'/images/slider-1.webp'} alt='' width={1024} height={600} />
+        </SwiperSlide>
+        <SwiperSlide>
+        <Image src={'/images/slider-2.webp'} alt='' width={1024} height={600} />
+        </SwiperSlide>
+        <SwiperSlide>
+        <Image src={'/images/slider-3.webp'} alt='' width={1024} height={600} />
+        </SwiperSlide>
+        <SwiperSlide>
+        <Image src={'/images/slider-4.webp'} alt='' width={1024} height={600} />
+        </SwiperSlide> 
       </Swiper>
+      </div>
         </section>
   )
 }
-
-export default Homehero
+ 

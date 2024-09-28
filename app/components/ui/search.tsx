@@ -1,8 +1,16 @@
-import React from 'react'
-import { RiSearchLine } from "react-icons/ri";
-import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
-function Search() {
+'use client'
+import React from 'react' 
+import { Adjustmenticon, Searchicon } from '@/app/icons';
+interface Searches {
+  thumb?: string[],
+  productName?: string,
+  currentPrice?: string,
+  regularPrice?: string,
+
+}
+export const Search: React.FC<Searches> = () => {
   return (
+    <>
     <div className="md:w-46% w-full ml-32">
     <form
       method="GET"
@@ -22,20 +30,20 @@ function Search() {
         <button
           type="submit"
           className="absolute inset-y-0 border-gray-300 border-r left-0 w-10 flex justify-center items-center "
-        >
-        <RiSearchLine className='size-4 rotate-90' />
+        > 
+        <Searchicon className='size-4' />
         </button>
         <button
           type="submit"
           className="absolute inset-y-0 right-0 w-10 flex justify-center items-center"
         >
-          <HiOutlineAdjustmentsVertical className='size-4' />
+          <Adjustmenticon className='size-4' />
         </button>
       </div>
     </form>
   </div>
-  
+  </>
   )
 }
 
-export default Search
+ 
