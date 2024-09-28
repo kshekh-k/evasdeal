@@ -2,18 +2,19 @@
 import Image from 'next/image' 
 import React from 'react'
 import { Productcard } from './product-card' 
+import { Staricon } from '@/app/icons'
 
 export const FlashSales: React.FC  = () => {
     return (
         <>
       
-        <section className="max-w-screen-xl mx-auto px-4 xl:px-0 my-10 md:my-12 mt-[100px] mb-[0px]" >
-            <div className="flex md:justify-center justify- items-center mb-2.5 md:mb-5">
-                <p className="font-bold text-sm md:text-[22px] center text-gray-12 uppercase dm-bold">Flash Sale</p>
-            </div>
+        <section className="my-10 md:my-12 space-y-5" >
+        
+                <h2 className="font-bold text-sm md:text-[22px] text-center text-gray-900 uppercase font-dm">Flash Sale</h2>
+           
             <div className="md:flex md:gap-5 gap-0">
                 <div className="md:w-322p w-full">
-                    <div className="relative bg-gray-11 rounded-md pb-0.5">
+                    <div className="relative bg-gray-100 rounded-md pb-0.5">
                         <div className="p-4">
                             <p className="text-xs rounded-sm font-medium text-gray-12 text-center px-1.5 py-1 bg-primary inline">
                                 Deal Of The Day
@@ -29,57 +30,48 @@ export const FlashSales: React.FC  = () => {
                             </p>
 
                             <div className="item-rating">
-                                <div className="self-top">
-                                    <ul className="flex justify-center mt-2">
-                                        <li className="mt-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                                                <path d="M6.23333 0L7.6328 4.30712H12.1616L8.49772 6.96907L9.89719 11.2762L6.23333 8.61425L2.56947 11.2762L3.96894 6.96907L0.305081 4.30712H4.83386L6.23333 0Z" fill="currentColor"></path>
-                                            </svg>
+                                <div className="flex gap-2 justify-center items-center">
+                                    <ul className="flex justify-center gap-1 pt-1">
+                                    <li>
+                                            <Staricon className="size-3" />
                                         </li>
 
-                                        <li className="mt-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                                                <path d="M6.23333 0L7.6328 4.30712H12.1616L8.49772 6.96907L9.89719 11.2762L6.23333 8.61425L2.56947 11.2762L3.96894 6.96907L0.305081 4.30712H4.83386L6.23333 0Z" fill="currentColor"></path>
-                                            </svg>
+                                        <li>
+                                        <Staricon className="size-3" />
                                         </li>
 
-                                        <li className="mt-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                                                <path d="M6.23333 0L7.6328 4.30712H12.1616L8.49772 6.96907L9.89719 11.2762L6.23333 8.61425L2.56947 11.2762L3.96894 6.96907L0.305081 4.30712H4.83386L6.23333 0Z" fill="currentColor"></path>
-                                            </svg>
+                                        <li>
+                                        <Staricon className="size-3" />
                                         </li>
 
-                                        <li className="mt-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                                                <path d="M6.23333 0L7.6328 4.30712H12.1616L8.49772 6.96907L9.89719 11.2762L6.23333 8.61425L2.56947 11.2762L3.96894 6.96907L0.305081 4.30712H4.83386L6.23333 0Z" fill="currentColor"></path>
-                                            </svg>
+                                        <li>
+                                        <Staricon className="size-3" />
                                         </li>
 
-                                        <li className="mt-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                                                <path d="M6.23333 0L7.6328 4.30712H12.1616L8.49772 6.96907L9.89719 11.2762L6.23333 8.61425L2.56947 11.2762L3.96894 6.96907L0.305081 4.30712H4.83386L6.23333 0Z" fill="currentColor"></path>
-                                            </svg>
+                                        <li>
+                                        <Staricon className="size-3" />
                                         </li>
                                     </ul>
 
-                                    <p className="ltr:ml-1.5 rtl:mr-1.5 text-gray-10 text-sm dm-sans mt-1.5">
+                                    <p className="text-gray-400 text-sm font-dm mt-1.5">
                                         ( Review)
                                     </p>
                                 </div>
                             </div>
-
-                            <p className="text-xl text-gray-12 dm-bold mt-3 pb-4">
+                            <div className='flex justify-center items-center gap-3'>
+                            <p className="text-xl text-gray-700 font-dm font-semibold">
                                 $40
                             </p>
-                            <p className="text-12 font-medium line-through text-gray-10 pl-1 mt-0.5">
+                            <p className="text-base font-medium line-through text-gray-400 pl-1">
                                 $60
                             </p>
+                        </div>
                         </div>
                     </div>
                 </div>
                 <div className="w-full">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
-                       <Productcard  productName="Waist straight Slouchy jeans" currentPrice="$40" regularPrice="$60" />
+                       <Productcard thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" currentPrice="$40" regularPrice="$60" />
  
 
                     </div>

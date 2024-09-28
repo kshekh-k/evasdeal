@@ -1,10 +1,9 @@
 'use client'
 import Link from 'next/link'
 import React from 'react' 
-import { IoPhonePortraitOutline } from "react-icons/io5"
 import {Categories} from '../ui/categories'
-export const Navbar: React.FC = () => {
- 
+import { Mobileicon } from '@/app/icons'
+export const Navbar: React.FC = () => { 
     return (
         <div className='border-y border-gray-300'>
             <div className='container px-4 xl:px-5 flex justify-between w-full'>
@@ -27,7 +26,7 @@ export const Navbar: React.FC = () => {
 
                     <div className="flex justify-end">
                         <button className='inline-flex gap-1 justify-center items-center w-full bg-white text-13 font-medium text-gray-700 cursor-pointer test-click height-63px'>
-                            <IoPhonePortraitOutline className='size-7' />
+                            <Mobileicon className='size-7' />
                             <p className="text-sm 2xl:text-base dm-sans font-medium">
                                 Download Our App</p>
                         </button>

@@ -1,11 +1,12 @@
 'use client'
 import Link from "next/link"
-import {Topbar} from "../ui/top-bar"
-import {Search} from "../ui/search"
-import Image from "next/image" 
+
+import Image from "next/image"
 import { Compassicon, Hearticon, Shoppingbagicon, Usericon } from "@/app/icons"
+import { Topbar } from "../ui/top-bar"
+import { Search } from "../ui/search"
 export const Header: React.FC = () => {
- 
+
     return (
         <header>
             {/* Top bar */}
@@ -27,10 +28,7 @@ export const Header: React.FC = () => {
                                 {/* unauthenticated */}
                                 <div className="flex flex-col gap-1 justify-center items-center cursor-pointer mt-2">
                                     <Usericon className="size-5" />
-                                    <p
-                                        style={{ color: "#898989" }}
-                                        className="text-xs font-medium text-center  "
-                                    >
+                                    <p className="text-xs font-medium text-center " >
                                         Account
                                     </p>
                                 </div>
@@ -44,10 +42,7 @@ export const Header: React.FC = () => {
                                     >
                                         <Hearticon className="size-5" />
 
-                                        <p
-                                            style={{ color: "#898989" }}
-                                            className="text-xs font-medium text-center "
-                                        >
+                                        <p className="text-xs font-medium text-center " >
                                             Wishlist
                                         </p>
 
@@ -58,10 +53,8 @@ export const Header: React.FC = () => {
                             <li className="absolute md:relative ml-5">
                                 <div className="flex flex-col justify-center gap-1 items-center md:px-2 lg:px-0 py-2 ">
                                     <Shoppingbagicon className="size-5" />
-                                    <p
-                                        style={{ color: "#898989" }}
-                                        className="hidden md:block text-xs font-medium text-center whitespace-nowrap "
-                                    >
+                                    <p className="text-xs font-medium text-center whitespace-nowrap" > 
+                                   
                                         Your Cart
                                     </p>
                                 </div>
@@ -70,9 +63,7 @@ export const Header: React.FC = () => {
                                 <div slot="icon" className="relative flex flex-col justify-center items-center md:px-2 lg:px-0 py-2 gap-1">
                                     <Compassicon className="size-5"  />
 
-                                    <p style={{ color: "#898989" }}
-                                        className="text-xs text-xss font-medium roboto-medium text-center whitespace-nowrap"
-                                    >
+                                    <p className="text-xs font-medium text-center whitespace-nowrap" > 
                                         Track Order
                                     </p>
                                 </div>
@@ -85,4 +76,4 @@ export const Header: React.FC = () => {
         </header>
     )
 }
- 
+

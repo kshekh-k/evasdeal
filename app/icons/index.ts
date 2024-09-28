@@ -12,5 +12,7 @@ export { default as Hearticon } from './svgs/heart-icon.svg'
 export { default as Shoppingbagicon } from './svgs/shopping-icon.svg'
 export { default as Compassicon } from './svgs/compass-icon.svg'
 export { default as Staricon } from './svgs/star-icon.svg'
+export { default as Mobileicon } from './svgs/mobile-icon.svg'
+export { default as Arrowicon } from './svgs/arrow-icon.svg'
  
  

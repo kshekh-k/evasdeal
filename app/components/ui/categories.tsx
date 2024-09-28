@@ -1,13 +1,14 @@
 'use client'
+import { Baricon } from '@/app/icons'
 import Link from 'next/link'
 import React from 'react'
-import { HiMiniBars3 } from 'react-icons/hi2'
+ 
 export const Categories: React.FC  = () => {
  
   return (
     <>
     <button className="relative w-full md:flex items-center border-r border-l cursor-pointer h-16 px-5 hidden bg-gray-50 text-gray-600 gap-4">
-                        <HiMiniBars3 className='size-6' />
+                        <Baricon className='size-6' />
                         <span className="text-base  ">Categories</span>
                     </button>
                     <div className='bg-white border transform scale-1 z-30 relative h-100 w-full hidden md:block'>

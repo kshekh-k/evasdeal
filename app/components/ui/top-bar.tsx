@@ -14,7 +14,7 @@ export const Topbar: React.FC = () => {
             <ul className="flex flex-col sm:flex-row text-xs gap-4 sm:gap-10 font-dm">
               <li>
                 <Link href="#"  className="w-fill flex gap-1 items-center" >
-                  <Phoneicon className="size-4" />
+                  <Phoneicon className="size-3" />
                   <span className="-mt-0.5">
                     +12013828902
                   </span>
@@ -22,7 +22,7 @@ export const Topbar: React.FC = () => {
               </li>
               <li>
                 <Link href="#" className="w-fill flex gap-1 items-center">
-                  <Emailicon className="size-4" />
+                  <Emailicon className="size-3" />
                   <span className="-mt-0.5">
                     admin@techvill.net
                   </span>
