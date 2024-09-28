@@ -37,7 +37,7 @@ const HomeBlog = () => {
                     </p>
                     <a
                         href="https://demo.martvill.techvill.net/blogs"
-                        className="process-goto justify-center text-gray-10 font-medium text-base dm-sans hidden md:inline-flex items-center dm-sans hover:text-gray-12 trans-2 ltr:ml-auto"
+                        className="process-goto justify-center text-gray-10 font-medium text-base font-dm hidden md:inline-flex items-center font-dm hover:text-gray-12 trans-2 ltr:ml-auto"
                     >
                         <span className='mr-2'>Read Blogs</span>
                         <svg className="relative ltr:ml-2 rtl:mr-2 neg-transition-scale" width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,10 +75,10 @@ const HomeBlog = () => {
                                     {post.date.split(" ")[1]}
                                 </p>
                             </div>
-                            <p className="text-xss md:text-[13px] font-semibold break-all text-gray-500 mt-3 dm-sans">
+                            <p className="text-xss md:text-[13px] font-semibold break-all text-gray-500 mt-3 font-dm">
                                 {post.author}
                             </p>
-                            <p className="text-base md:text-xl md:leading-relaxed break-all font-medium text-gray-12 dm-sans">
+                            <p className="text-base md:text-xl md:leading-relaxed break-all font-medium text-gray-12 font-dm">
                                 {post.title}
                             </p>
                             <a href={post.link} className="text-gray-500 font-semibold text-sm md:text-base inline-flex items-center mt-1">

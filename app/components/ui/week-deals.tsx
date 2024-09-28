@@ -41,7 +41,7 @@ export const Weekdeals: React.FC = () => {
                                 </p>
                                 <Link
                                     href="#"
-                                    className="hover:bg-gray-600 hover:text-white text-white border-white relative gap-1 flex justify-center rounded-sm text-xs mt-13p items-center py-2 w-29 dm-sans border"
+                                    className="hover:bg-gray-600 hover:text-white text-white border-white relative gap-1 flex justify-center rounded-sm text-xs mt-13p items-center py-2 w-29 font-dm border"
                                 >
                                     <span>Visit</span>
                                    <Arrowicon className="size-3" />
