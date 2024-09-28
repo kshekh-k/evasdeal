@@ -12,6 +12,8 @@ import { Header } from '../../layout/header'
 import { Navbar } from '../../layout/navbar'
 import { Topcategories } from '../../ui/top-categories-of-month'
 import { Weekdeals } from '../../ui/week-deals'
+import Footer from '../../layout/footer'
+import TopBrands from '../../ui/top-brands'
 
 export const Homepage: React.FC = () => {
 
@@ -35,8 +37,10 @@ export const Homepage: React.FC = () => {
           <FurnitureZone />
           <AppZone />
           <DigitalProduct />
+          <TopBrands />
         </div>
       </main>
+      <Footer />
     </>
   )
 }
