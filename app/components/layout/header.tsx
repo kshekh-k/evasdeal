@@ -26,47 +26,47 @@ export const Header: React.FC = () => {
                         <ul className="flex -mt-1.5">
                             <li className="hidden md:block ml-5">
                                 {/* unauthenticated */}
-                                <div className="flex flex-col gap-1 justify-center items-center cursor-pointer mt-2">
+                                <button className="flex flex-col gap-1 justify-center items-center cursor-pointer mt-2 hover:text-primary ease-in-out duration-200">
                                     <Usericon className="size-5" />
-                                    <p className="text-xs font-medium text-center " >
+                                    <span className="text-xs font-medium text-center " >
                                         Account
-                                    </p>
-                                </div>
+                                    </span>
+                                </button>
                             </li>
 
 
                             <li className="hidden md:block ml-5">
                                 <div className="flex flex-col justify-center items-center">
                                     <button
-                                        className="md:px-2 lg:px-0 py-2 flex flex-col gap-1 w-fill justify-center items-center"
+                                        className="md:px-2 lg:px-0 py-2 flex flex-col gap-1 w-fill justify-center items-center hover:text-primary ease-in-out duration-200"
                                     >
                                         <Hearticon className="size-5" />
 
-                                        <p className="text-xs font-medium text-center " >
+                                        <span className="text-xs font-medium text-center " >
                                             Wishlist
-                                        </p>
+                                        </span>
 
                                     </button>
                                 </div>
                             </li>
 
                             <li className="absolute md:relative ml-5">
-                                <div className="flex flex-col justify-center gap-1 items-center md:px-2 lg:px-0 py-2 ">
+                                <button className="flex flex-col justify-center gap-1 items-center md:px-2 lg:px-0 py-2 hover:text-primary ease-in-out duration-200 ">
                                     <Shoppingbagicon className="size-5" />
                                     <p className="text-xs font-medium text-center whitespace-nowrap" > 
                                    
                                         Your Cart
                                     </p>
-                                </div>
+                                </button>
                             </li>
                             <li className=" ml-5">
-                                <div slot="icon" className="relative flex flex-col justify-center items-center md:px-2 lg:px-0 py-2 gap-1">
+                                <button className="relative flex flex-col justify-center items-center md:px-2 lg:px-0 py-2 gap-1 hover:text-primary ease-in-out duration-200">
                                     <Compassicon className="size-5"  />
 
-                                    <p className="text-xs font-medium text-center whitespace-nowrap" > 
+                                    <span className="text-xs font-medium text-center whitespace-nowrap" > 
                                         Track Order
-                                    </p>
-                                </div>
+                                    </span>
+                                </button>
                             </li>
 
                         </ul>

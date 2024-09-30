@@ -16,14 +16,14 @@ export const Search: React.FC<Searches> = () => {
       method="GET"
       action=""
     >
-      <div className="relative rounded input-width border border-gray-300 bg-white ">
+      <div className="relative bg-white ">
         <input
           type="search"
           name="keyword"
           placeholder="Type your product name.."
           defaultValue=""
           id="itemSearch"
-          className="bg-transparent h-10 w-full text-sm focus:outline-none px-12"
+          className="bg-transparent h-10 w-full text-sm focus:outline-none outline-none px-12 rounded border border-gray-300 focus:border-primary ease-in-out duration-200"
           autoComplete="off"
         />
         
@@ -35,7 +35,7 @@ export const Search: React.FC<Searches> = () => {
         </button>
         <button
           type="submit"
-          className="absolute inset-y-0 right-0 w-10 flex justify-center items-center"
+          className="absolute inset-y-0 right-0 w-10 flex justify-center items-center hover:text-primary ease-in-out duration-200"
         >
           <Adjustmenticon className='size-4' />
         </button>

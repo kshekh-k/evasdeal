@@ -17,5 +17,7 @@ export { default as Compassicon } from './svgs/compass-icon.svg'
 export { default as Staricon } from './svgs/star-icon.svg'
 export { default as Mobileicon } from './svgs/mobile-icon.svg'
 export { default as Arrowicon } from './svgs/arrow-icon.svg'
+export { default as Anglelefticon } from './svgs/angle-left-icon.svg'
+export { default as Anglerighticon } from './svgs/angle-right-icon.svg'
  
  

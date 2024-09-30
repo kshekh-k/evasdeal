@@ -5,6 +5,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --swiper-color:#00BF89 ;
+  --swiper-pagination-color: var(--swiper-color);
+  --swiper-pagination-bullet-size: 10px;
+  --swiper-pagination-bullet-width: 10px;
+  --swiper-pagination-bullet-height: 10px;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+}
+.swiper-pagination-bullet-active{
+  --swiper-pagination-bullet-width: 25px;
+  width: var(--swiper-pagination-bullet-width); border-radius: 10px !important;
 }
 
 @media (prefers-color-scheme: dark) {

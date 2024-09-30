@@ -13,9 +13,9 @@ export const Categories: React.FC  = () => {
                     </button>
                     <div className='bg-white border transform scale-1 z-30 relative h-100 w-full hidden md:block'>
                         <ul className="overflow-hidden divide-y divide-gray-300 height-437p">
-                            <li>
+                            <li className='group'>
                                 <Link href="#">
-                                    <div className='flex items-center justify-start w-full categories-menu h-12 text-gray-600 font-medium px-5 '>
+                                    <div className='flex items-center justify-start w-full categories-menu h-12 text-gray-600 group-hover:text-primary ease-in-out duration-200 font-medium px-5 '>
                                         <div className='size-5'></div>
                                         <span className='text-sm cursor-pointer text-one '>Electronic Devices</span>
                                     </div>
