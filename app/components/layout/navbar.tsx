@@ -3,6 +3,9 @@ import Link from 'next/link'
 import React from 'react'
 import { Categories } from '../ui/categories'
 import { Mobileicon } from '@/app/icons'
+interface categories {
+    show?:boolean
+}
 const menus = [
     {
         label: 'Home',
@@ -43,23 +46,23 @@ const menus = [
         url: '#'
     },
 ]
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC<categories> = ({show=false}) => {
     return (
-        <div className='border-y border-gray-300'>
+        <div className='border-y border-gray-300 '>
             <div className='container px-4 xl:px-5 flex justify-between w-full'>
                 <div className='relative font-dm lg:w-23% md:w-25% h-16 hidden md:block'>
-                    <Categories />
+                    <Categories show={show} />
                 </div>
                 <div className='md:ml-5 lg:ml-0 ml-0 md:w-3/4 w-full gap-2 flex justify-between items-stretch'>
        
                     <ul className='flex text-white md:text-black items-stretch -mx-4'>
                         {menus.map((item, index) =>
                             <li key={index} className={`relative flex items-center group px-4 after:border-r after:border-gray-300 after:absolute after:right-0 after:h-5 ${index === menus.length - 1 && 'after:hidden'}`}>
-                                <Link href={item.url} className={`group-hover:text-primary underline-offset-8 decoration-4 group-hover:underline ease-in-out duration-200 `}>
+                                <Link href={item.url} className={`group-hover:text-primary text-gray-700 underline-offset-8 decoration-4 group-hover:underline ease-in-out duration-200 `}>
                                     {item.label}
                                 </Link>
                                 {item.level1 && 
-                                <ul className='text-sm bg-white font-dm absolute top-0 rounded-b-md border border-gray-300 shadow-1 w-52 divide-y divide-gray-300 -left-[9999em] opacity-0 ease-in-out duration-200 group-hover:left-auto group-hover:opacity-100 group-hover:top-full group-hover:z-10'>
+                                <ul className='text-sm bg-white font-dm absolute rounded-b-md border border-gray-300 shadow-1 w-52 divide-y divide-gray-300  ease-in-out duration-200 z-20 left-auto top-full hidden group-hover:block '>
                                     {item.level1?.map((itemLevel1, i)=>
                                     <li key={i} className='relative'>
                                         <Link href= {itemLevel1.url} className={`py-3 px-5 block ease-in-out duration-200 hover:bg-primary hover:text-white ${i === item.level1.length -1 && 'rounded-b-md'}`}>

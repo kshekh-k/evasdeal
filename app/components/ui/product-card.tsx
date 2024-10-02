@@ -15,18 +15,17 @@ export const Productcard: React.FC<ProductCard> = ({
 }) => {
     return (
         <div className='flex flex-col group'>
-            <div className="border rev-img mainflash-1 rounded-md relative ">
+            <div className="border rounded-md relative ">
                 <div className="h-48 flex justify-center items-center">
-
-                    <Link href="#" className="w-full h-full z-10">
+                    <Link href="#" className="w-full h-full">
                         <Image className="w-full h-full object-cover rounded-md neg-transition-scale" src={`${thumb}`} alt="Image" width={200} height={200} />
                     </Link>
                 </div>
                 <div className="flex flex-col gap-1 w-16 absolute top-2.5 left-2.5 right-2.5">
-                    <p className="bg-primary text-center relative z-30 justify-center text-white p-1 font-dm leading-none flex items-center rounded-sm font-medium text-[10px] whitespace-nowrap">
+                    <p className="bg-primary text-center relative z-10 justify-center text-white p-1 font-dm leading-none flex items-center rounded-sm font-medium text-[10px] whitespace-nowrap">
                         Featured
                     </p>
-                    <p className="bg-primary-2 flex leading-none text-center relative text-white p-1 font-dm items-center justify-center rounded-sm font-medium z-30 text-[10px] whitespace-nowrap uppercase">
+                    <p className="bg-primary-2 flex leading-none text-center relative text-white p-1 font-dm items-center justify-center rounded-sm font-medium z-10 text-[10px] whitespace-nowrap uppercase">
                         33.33% off
                     </p>
                 </div>

@@ -3,6 +3,9 @@ import { Angledownicon, Anglerighticon, Baricon } from '@/app/icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+interface categories {
+    show?:boolean
+}
 const categoriesList = [
     {
         label: 'Electronic Devices',
@@ -850,101 +853,98 @@ const categoriesList = [
 
 ]
 
-export const Categories: React.FC = () => {
-    const [showless, setShowless] = React.useState(false)
+export const Categories: React.FC<categories> = ({show=false}) => {
+    const [showless, setShowless] = React.useState(false) 
 
     return (
-        <>
+        <div className='relative z-40 group'>
             <button className="relative w-full md:flex items-center border-r border-l cursor-pointer h-16 px-5 hidden bg-gray-50 text-gray-600 gap-4">
                 <Baricon className='size-6' />
-                <span className="text-base  ">Categories</span>
+                <span className="text-base flex-1 text-left">Categories</span>
+                <Angledownicon className='size-3' />
             </button>
-            <div className='bg-white border transform scale-1 z-30 relative h-100 w-full hidden md:block'>
-                <ul className="divide-y divide-gray-300">
-
-                
-                    
+            
+            <div className={`bg-white border transform scale-1 z-30 relative h-100 w-full ${show ? '' : 'hidden group-hover:block'}`}>
+                <ul className="divide-y divide-gray-300">             
                     {showless ? (
                         <>
-                            {categoriesList.map((item, index) => (
-                                <li key={index} className='group/main relative font-dm'>
-                                    <Link href="#" className='flex items-center justify-start w-full h-12 text-gray-600  ease-in-out duration-200 font-medium px-5 gap-3 group-hover/main:indent-2 group-hover/main:bg-primary group-hover/main:text-white'>
-                                        <span className='size-5 group-hover/main:translate-x-2 ease-in-out duration-200'><Image src={item.icon} alt={item.label} width={20} height={20} /></span>
-                                        <span className='text-sm flex-1'>{item.label}</span>
-                                        {item.subCat && <Anglerighticon className="size-3" />}
-                                    </Link>
-                                    <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/main:block'>
-                                        {item.subCat?.map((subCitem, si) =>
-                                            <li key={si} className='relative group/item'>
-                                                <Link href={subCitem.url} className={`flex py-3 px-4 text-gray-600 items-center ease-in-out duration-200 group-hover/item:indent-2 group-hover/item:bg-primary group-hover/item:text-white ${si == 0 && 'rounded-t-md'} ${si === item.subCat.length - 1 && 'rounded-b-md'}`}>
-                                                    <span className='text-sm flex-1'>{subCitem.label}</span>
-                                                    {item.subCat && <Anglerighticon className="size-3" />}
-                                                </Link>
+                         {categoriesList.map((item, index) => (
+                            <li key={`cat-all-${index}`} className='group/main relative font-dm'>
+                                <Link href="#" className='flex items-center justify-start w-full h-12 text-gray-600  ease-in-out duration-200 font-medium px-5 gap-3 group-hover/main:indent-2 group-hover/main:bg-primary group-hover/main:text-white'>
+                                    <span className='size-5 group-hover/main:translate-x-2 ease-in-out duration-200'><Image src={item.icon} alt={item.label} width={20} height={20} /></span>
+                                    <span className='text-sm flex-1'>{item.label}</span>
+                                    {item.subCat && <Anglerighticon className="size-3" />}
+                                </Link>
+                                <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/main:block'>
+                                    {item.subCat?.map((subCitem, si) =>
+                                        <li key={si} className='relative group/item'>
+                                            <Link href={subCitem.url} className={`flex py-3 px-4 text-gray-600 items-center ease-in-out duration-200 group-hover/item:indent-2 group-hover/item:bg-primary group-hover/item:text-white ${si == 0 && 'rounded-t-md'} ${si === item.subCat.length - 1 && 'rounded-b-md'}`}>
+                                                <span className='text-sm flex-1'>{subCitem.label}</span>
+                                                {item.subCat && <Anglerighticon className="size-3" />}
+                                            </Link>
 
-                                                <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/item:block'>
-                                                    {subCitem.cates?.map((catesItem, pi) =>
-                                                        <li key={pi} className='relative'>
-                                                            <Link href={catesItem.url} className={`py-3 px-4 text-gray-600 flex ease-in-out duration-200 hover:bg-primary hover:text-white hover:indent-2 ${pi == 0 && 'rounded-t-md'} ${pi === subCitem.cates?.length - 1 && 'rounded-b-md'}`}>
-                                                                <span className='text-sm'>{catesItem.label}</span>
-                                                            </Link>
-                                                        </li>
-                                                    )}
-                                                </ul>
+                                            <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/item:block'>
+                                                {subCitem.cates?.map((catesItem, pi) =>
+                                                    <li key={pi} className='relative'>
+                                                        <Link href={catesItem.url} className={`py-3 px-4 text-gray-600 flex ease-in-out duration-200 hover:bg-primary hover:text-white hover:indent-2 ${pi == 0 && 'rounded-t-md'} ${pi === subCitem.cates?.length - 1 && 'rounded-b-md'}`}>
+                                                            <span className='text-sm'>{catesItem.label}</span>
+                                                        </Link>
+                                                    </li>
+                                                )}
+                                            </ul>
 
-                                            </li>
-                                        )}
-                                    </ul>
-                                </li>
-
+                                        </li>
+                                    )}
+                                </ul>
+                            </li>
                             )
-                            )}
+                         )}
                         </>
-                    ) : (
+                        ) : (
                         <>
-                            {categoriesList.slice(0, 8).map((item, index) => (
-                                <li key={index} className='group/main relative font-dm'>
-                                    <Link href="#" className='flex items-center justify-start w-full h-12 text-gray-600  ease-in-out duration-200 font-medium px-5 gap-3 group-hover/main:indent-2 group-hover/main:bg-primary group-hover/main:text-white'>
-                                        <span className='size-5 group-hover/main:translate-x-2 ease-in-out duration-200'><Image src={item.icon} alt={item.label} width={20} height={20} /></span>
-                                        <span className='text-sm flex-1'>{item.label}</span>
-                                        {item.subCat && <Anglerighticon className="size-3" />}
-                                    </Link>
-                                    <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/main:block'>
-                                        {item.subCat?.map((subCitem, si) =>
-                                            <li key={si} className='relative group/item'>
-                                                <Link href={subCitem.url} className={`flex py-3 px-4 text-gray-600 items-center ease-in-out duration-200 group-hover/item:indent-2 group-hover/item:bg-primary group-hover/item:text-white ${si == 0 && 'rounded-t-md'} ${si === item.subCat.length - 1 && 'rounded-b-md'}`}>
-                                                    <span className='text-sm flex-1'>{subCitem.label}</span>
-                                                    {item.subCat && <Anglerighticon className="size-3" />}
-                                                </Link>
+                         {categoriesList.slice(0, 8).map((item, index) => (
+                            <li key={`cat-less-${index}`} className='group/main relative font-dm'>
+                                <Link href="#" className='flex items-center justify-start w-full h-12 text-gray-600  ease-in-out duration-200 font-medium px-5 gap-3 group-hover/main:indent-2 group-hover/main:bg-primary group-hover/main:text-white'>
+                                    <span className='size-5 group-hover/main:translate-x-2 ease-in-out duration-200'><Image src={item.icon} alt={item.label} width={20} height={20} /></span>
+                                    <span className='text-sm flex-1'>{item.label}</span>
+                                    {item.subCat && <Anglerighticon className="size-3" />}
+                                </Link>
+                                <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/main:block'>
+                                    {item.subCat?.map((subCitem, si) =>
+                                        <li key={si} className='relative group/item'>
+                                            <Link href={subCitem.url} className={`flex py-3 px-4 text-gray-600 items-center ease-in-out duration-200 group-hover/item:indent-2 group-hover/item:bg-primary group-hover/item:text-white ${si == 0 && 'rounded-t-md'} ${si === item.subCat.length - 1 && 'rounded-b-md'}`}>
+                                                <span className='text-sm flex-1'>{subCitem.label}</span>
+                                                {item.subCat && <Anglerighticon className="size-3" />}
+                                            </Link>
 
-                                                <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/item:block'>
-                                                    {subCitem.cates?.map((catesItem, pi) =>
-                                                        <li key={pi} className='relative'>
-                                                            <Link href={catesItem.url} className={`py-3 px-4 text-gray-600 flex ease-in-out duration-200 hover:bg-primary hover:text-white hover:indent-2 ${pi == 0 && 'rounded-t-md'} ${pi === subCitem.cates?.length - 1 && 'rounded-b-md'}`}>
-                                                                <span className='text-sm'>{catesItem.label}</span>
-                                                            </Link>
-                                                        </li>
-                                                    )}
-                                                </ul>
+                                            <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/item:block'>
+                                                {subCitem.cates?.map((catesItem, pi) =>
+                                                    <li key={pi} className='relative'>
+                                                        <Link href={catesItem.url} className={`py-3 px-4 text-gray-600 flex ease-in-out duration-200 hover:bg-primary hover:text-white hover:indent-2 ${pi == 0 && 'rounded-t-md'} ${pi === subCitem.cates?.length - 1 && 'rounded-b-md'}`}>
+                                                            <span className='text-sm'>{catesItem.label}</span>
+                                                        </Link>
+                                                    </li>
+                                                )}
+                                            </ul>
 
-                                            </li>
-                                        )}
-                                    </ul>
-                                </li>
-
+                                        </li>
+                                    )}
+                                </ul>
+                            </li>
                             )
-                            )}
+                        )}
                         </>
                     )}
                     <li>
                         <button className='flex items-center py-3 px-5 text-gray-600 uppercase w-full' onClick={() => setShowless(!showless)}>
-                            <span className='flex-1 text-left text-sm font-medium'>See {showless ? 'Less' : 'More'} Categories</span>
+                            <span className='flex-1 text-left text-sm font-semibold font-dm'>See {showless ? 'Less' : 'All'} Categories</span>
                             <Angledownicon className={`size-3 ease-in-out duration-200 ${showless && 'rotate-180' }`} />
                         </button>
                     </li>
                 </ul>
             </div>
-
-        </>
+            
+        </div>
     )
 }
 

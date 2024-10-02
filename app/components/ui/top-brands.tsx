@@ -60,39 +60,20 @@ export const TopBrands: React.FC = () => {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 grid-rows-2 gap-5 md:gap-7">
                 {brands.map((brand, index) => (
-                    <>
-                        {index == 0 ? (
-                            <Link key={`first-col-${index}`} href={brand.link} className="row-span-2 col-span-2 border rounded-md group flex justify-center items-center">
-                                <div className="grow p-6 flex flex-row h-36 justify-center items-center  ">
-                                    <Image
-                                        className="w-32 h-auto object-cover group-hover:scale-110 ease-in-out duration-200"
-                                        src={brand.imgSrc}
-                                        alt={brand.name}
-                                        width={1000} // Set appropriate width for the image
-                                        height={500} // Set appropriate height for the image
-                                    />
-                                </div>
+                    <Link key={`cols-${index}`} href={brand.link} className={`border rounded-md group flex justify-center items-center ${index == 0 ? 'row-span-2 col-span-2':''}`}>
+                        <div className="grow p-6 flex flex-row h-36 justify-center items-center  ">
+                            <Image
+                                className={`h-auto object-cover group-hover:scale-110 ease-in-out duration-200 ${index == 0 ? 'w-32 ' : 'w-24'}`}
+                                src={brand.imgSrc}
+                                alt={brand.name}
+                                width={1000} // Set appropriate width for the image
+                                height={500} // Set appropriate height for the image
+                            />
+                        </div>
+                    </Link>
 
-                            </Link>
-                        ) : (
-                            <Link key={`cols-${index}`} href={brand.link} className="border rounded-md group flex justify-center items-center">
-                                <div className="grow p-6 flex flex-row h-36 justify-center items-center ">
-                                    <Image
-                                        className="w-24 h-auto object-cover group-hover:scale-110 ease-in-out duration-200"
-                                        src={brand.imgSrc}
-                                        alt={brand.name}
-                                        width={1000} // Set appropriate width for the image
-                                        height={500} // Set appropriate height for the image
-                                    />
-                                </div>
-
-                            </Link>
-                        )}
-                    </>
                 ))}
             </div>
-
-
         </section>
     );
 };

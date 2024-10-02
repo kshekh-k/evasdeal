@@ -10,23 +10,16 @@ export const Weekdeals: React.FC = () => {
         <>
 
             <section className="my-10 md:my-12 space-y-5" >
-
                 <h2 className="font-bold text-sm md:text-[22px] text-center text-gray-900 uppercase font-dm">Best deals of the week</h2>
-
                 <div className="md:flex md:gap-5 gap-0">
-
                     <div className="w-full">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
                             <Productcard thumb="/images/pennant-1.jpg" productName="Waist straight Slouchy jeans" currentPrice="$40" regularPrice="$60" />
-
-
                         </div>
                     </div>
 
                     <div className="md:w-322p w-full">
-                        <div
-                            className="relative h-600p w-full builder_slider fade" 
-                        >
+                        <div className="relative h-600p w-full builder_slider fade">
                             <Image width={700} height={200} alt=''
                                 className="w-full h-full object-cover rounded-md"
                                 src="/images/week-deals-offers.webp"

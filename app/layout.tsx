@@ -7,12 +7,14 @@ const nunito = Nunito({
   subsets: ['latin'],
   variable: "--nunito",
   display: 'swap',
+  weight:['200','300','400','500','600','700','800','900']
 })
 
 const dmsans = DM_Sans({
   subsets: ['latin'],
   variable: "--dmsans",
   display: 'swap',
+  weight:['100','200','300','400','500','600','700','800','900']
 })
 
  

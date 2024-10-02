@@ -1,8 +1,7 @@
 'use client'
 import React from 'react'
-import { Crossicon} from '@/app/icons'
- 
-import Signin from './Signin'
+import { Crossicon} from '@/app/icons' 
+import Signin from './signin'
 import Signup from './signup'
  
 interface signinup {

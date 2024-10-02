@@ -176,7 +176,7 @@ export const Footer: React.FC = () => {
               <div className="mt-5 border-gray-13 flex">
                 <div className="flex gap-7 sm:gap-3 flex-wrap">
                   {socialmedia.map((item, index) =>
-                    <Link href={item.url} target="_blank" className="hover:bg-primary ease-in-out duration-200 text-white flex items-center justify-center w-8 h-8 bg-white/10 p-2 rounded-full ">
+                    <Link key={index} href={item.url} target="_blank" className="hover:bg-primary ease-in-out duration-200 text-white flex items-center justify-center w-8 h-8 bg-white/10 p-2 rounded-full ">
                       {item.icon}
                     </Link>
                   )}

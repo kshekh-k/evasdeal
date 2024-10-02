@@ -72,8 +72,6 @@ export const FlashSales: React.FC  = () => {
                 <div className="w-full">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
                        <Productcard thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" currentPrice="$40" regularPrice="$60" />
- 
-
                     </div>
                 </div>
 

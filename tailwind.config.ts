@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         red:{
           DEFAULT:'#c5331e',
-          2:'#953426',
+          1:'#953426',
         },
         blue:{
           DEFAULT:'#4e6297',
@@ -227,6 +227,8 @@ const config: Config = {
     
 		}
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 };
 export default config;

@@ -23,7 +23,7 @@ const Signin: React.FC = () => {
                         <div className="flex gap-2 items-center relative">
 
                             <input id='rememberMe'
-                                className="md:-mt-0.5 size-4 border text-primary border-gray-300 cursor-pointer"
+                                className="md:-mt-0.5 outline-none ring-0 focus:ring-0 size-4 border text-primary border-gray-300 cursor-pointer"
                                 type="checkbox" />
                             <label
                                 className="text-sm font-medium font-dm text-gray-600 cursor-pointer"

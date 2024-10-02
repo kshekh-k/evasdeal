@@ -20,7 +20,7 @@ export const Homepage: React.FC = () => {
   return (
     <>
       <Header />
-      <Navbar />
+      <Navbar show={true} />
       <main>
         <div className='container p-4 xl:px-5'>
           <Homehero />
