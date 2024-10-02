@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
                     <div className="container p-4 xl:px-5 flex justify-between">
                         <div className="hidden md:block ">
                             <div className="h-9 3xl:w-63 pt-1p">
-                                <Link href="#">
+                                <Link href="/">
                                     <Image width={180} height={80} className="h-11 neg-transition-scale mt-2" src="/images/logo.png" alt="logo" />
                                 </Link>
                             </div>
@@ -85,12 +85,12 @@ export const Header: React.FC = () => {
                                     </button>
                                 </li>
                                 <li className=" ml-5">
-                                    <button className="relative flex flex-col justify-center items-center md:px-2 lg:px-0 py-2 gap-1 hover:text-primary ease-in-out duration-200">
+                                    <Link href={'/track-order'} className="relative flex flex-col justify-center items-center md:px-2 lg:px-0 py-2 gap-1 hover:text-primary ease-in-out duration-200">
                                         <Compassicon className="size-5" />
                                         <span className="text-xs font-medium text-center whitespace-nowrap" >
                                             Track Order
                                         </span>
-                                    </button>
+                                    </Link>
                                 </li>
 
                             </ul>

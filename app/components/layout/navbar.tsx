@@ -9,7 +9,7 @@ interface categories {
 const menus = [
     {
         label: 'Home',
-        url: '#',
+        url: '/',
         level1:[
             {
                 label: 'Level 1 Item',
@@ -31,7 +31,7 @@ const menus = [
     },
     {
         label: 'Shop',
-        url: '#'
+        url: '/shop'
     },
     {
         label: 'Coupon',
