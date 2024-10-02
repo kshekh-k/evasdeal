@@ -22,11 +22,11 @@ export const Productcard: React.FC<ProductCard> = ({
                         <Image className="w-full h-full object-cover rounded-md neg-transition-scale" src={`${thumb}`} alt="Image" width={200} height={200} />
                     </Link>
                 </div>
-                <div className="flex flex-col gap-1 w-24 absolute top-2.5 left-2.5 right-2.5">
-                    <p className="bg-primary text-center relative z-30 justify-center text-white px-2 py-1 items-center rounded-sm font-medium text-xs whitespace-nowrap">
+                <div className="flex flex-col gap-1 w-16 absolute top-2.5 left-2.5 right-2.5">
+                    <p className="bg-primary text-center relative z-30 justify-center text-white p-1 font-dm leading-none flex items-center rounded-sm font-medium text-[10px] whitespace-nowrap">
                         Featured
                     </p>
-                    <p className="bg-primary-2 text-center relative text-white  px-2 py-1  items-center justify-center rounded-sm font-medium z-30 text-xs whitespace-nowrap uppercase">
+                    <p className="bg-primary-2 flex leading-none text-center relative text-white p-1 font-dm items-center justify-center rounded-sm font-medium z-30 text-[10px] whitespace-nowrap uppercase">
                         33.33% off
                     </p>
                 </div>
@@ -50,11 +50,11 @@ export const Productcard: React.FC<ProductCard> = ({
                         </div>
                         <div className="flex gap-2 absolute bottom-0 inset-x-0 p-1">
                             <button className="text-white font-medium py-1 px-3 rounded flex-1 text-center text-xs bg-primary hover:bg-primary-2 ease-in-out duration-200 z-20">
-                                Quick View
+                            Quick View
 
                             </button>
                             <button className="text-white font-medium py-1 px-3 rounded flex-1 text-center text-xs bg-primary hover:bg-primary-2 ease-in-out duration-200 z-20">
-                                Add to cart
+                               Buy Now
 
                             </button>
                         </div>

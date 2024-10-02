@@ -29,8 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${nunito.variable} ${dmsans.variable}`}>
-      <body className={`antialiased`} >
+      <body className={`antialiased bg-white`} >
+        <div className="overflow-hidden">
         {children}
+        </div>
       </body>
     </html>
   );

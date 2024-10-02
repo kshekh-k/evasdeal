@@ -11,8 +11,8 @@ import { Anglelefticon, Anglerighticon } from '@/app/icons';
 export const Homehero: React.FC = () => {
 
   return (
-    <section className='md:w-3/4 w-full -mt-2 ml-auto '>
-      <div className="overflow-hidden rounded-xl h-96 relative">
+    <section className='md:w-3/4 w-full ml-auto '>
+      <div className="overflow-hidden rounded-xl h-[420px] relative">
         <Swiper className="mySwiper h-full" 
         
         modules={[Navigation, Pagination]} 

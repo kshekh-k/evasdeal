@@ -22,14 +22,14 @@ export const Usp: React.FC = () => {
  
     return (
         <>
-            <div className="border border-dashed border-gray-400 p-3 grid grid-cols-3 divide-x divide-gray-200">
+            <div className="border border-dashed border-gray-400 py-6 grid grid-cols-3 divide-x divide-gray-200">
                 {usp.map((item, index)=>
-                <div key={index} className="my-6 px-6  ">
+                <div key={index} className="relative px-6">
                     <div className="flex items-center">
-                        <div className='size-24 flex justify-center items-center'>
-                            <Image width={50} height={50}
+                        <div className='size-16 shrink-0 flex justify-center items-center'>
+                            <Image width={64} height={64}
                                 src={item.img}
-                                className="w-24 h-auto"
+                                className="w-16 h-auto"
                                 alt={item.us}
                             />
                         </div>

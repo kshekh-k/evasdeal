@@ -14,6 +14,14 @@ const config: Config = {
         dm: ["var(--dmsans)", ...defaultTheme.fontFamily.sans],
     },
       colors: {
+        red:{
+          DEFAULT:'#c5331e',
+          2:'#953426',
+        },
+        blue:{
+          DEFAULT:'#4e6297',
+          1:'#3a4a75'
+        },
         primary:
         {
           DEFAULT:'#00BF89', 
@@ -22,6 +30,10 @@ const config: Config = {
 
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+
+      boxShadow:{
+        1:'0 5px 10px -2px rgba(0,0,0,.1)',
       },
 
       spacing: {

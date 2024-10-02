@@ -1,58 +1,62 @@
- 'use client'
+'use client'
 
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { Productcard } from './product-card';
 import { Arrowicon } from '@/app/icons';
- 
+
 export const FurnitureZone: React.FC = () => {
- 
+
     return (
         <section className=" my-10 md:my-12" >
-           
-                <div className="flex md:justify-between justify-center items-center mb-2.5 md:mb-5">
-                    <h2 className="font-bold text-sm md:text-[22px] text-gray-900 uppercase dm-bold">Furniture ZONE</h2>
-                    <Link
-                        href="#"
-                        className="process-goto relative justify-center text-gray-600 font-medium text-base font-dm items-center md:inline-flex hover:text-gray-12 transition duration-200"
-                    >
-                        <span className="mr-2">See More</span>
-                        <Arrowicon className="size-3"/>
-                         
-                    </Link>
-                </div>
-                <div className="md:flex md:gap-5 gap-0">
-                    <div className="md:w-[335px] lg:w-322p w-full pb-2">
-                        <div className="relative h-600p w-full">
-                           <Image src="/images/furniture.webp" alt="" width={400} height={600} className="w-full h-full object-cover rounded-md" />                           
-                            <div className="absolute top-0 p-6">
-                                <p className="text-xs text-gray-600 font-bold mb-1">Take A Look</p>
-                                <p className="text-gray-900 font-medium text-lg uppercase mb-1.5">On Our</p>
+
+            <div className="flex md:justify-between justify-center items-center mb-2.5 md:mb-5">
+                <h2 className="font-bold text-sm md:text-[22px] text-gray-900 uppercase dm-bold">Furniture ZONE</h2>
+                <Link
+                    href="#"
+                    className="process-goto relative justify-center text-gray-600 font-medium text-base font-dm items-center md:inline-flex hover:text-gray-12 transition duration-200"
+                >
+                    <span className="mr-2">See More</span>
+                    <Arrowicon className="size-3" />
+
+                </Link>
+            </div>
+            <div className="md:flex md:gap-5 gap-0">
+                <div className="md:w-[335px] lg:w-322p w-full pb-2">
+                    <div className="relative h-600p w-full">
+                        <Image src="/images/furniture.webp" alt="" width={400} height={600} className="w-full h-full object-cover rounded-md" />
+                        <div className="absolute top-0 p-6">
+                            <div className='space-y-2'>
+                                <div className='space-y-1'>
+                                    <p className="text-xs text-gray-600 font-bold mb-1">Take A Look</p>
+                                    <p className="text-gray-900 font-medium text-lg uppercase mb-1.5">On Our</p>
+                                </div>
                                 <p className="text-gray-12 font-bold text-2xl -mt-1.5 uppercase">Furnitures</p>
+
+
                                 <Link
-                                    href="https://demo.martvill.techvill.net/search-products?categories=categories=Home%20Appliances"
-                                    className="process-goto hover:bg-gray-12 hover:text-white cursor-pointer relative flex justify-center text-gray-12 rounded-sm text-xs mt-13p items-center py-2 w-29 font-dm border border-gray-800"
+                                    className="hover:bg-gray-600 hover:text-white text-gray-800 border-gray-600 relative gap-1 flex justify-center rounded-sm text-xs mt-13p items-center py-2 w-29 font-dm border"
+                                    href="#"
+                                    title="Shop Electronic Devices at Gadget Town"
                                 >
                                     <span>Shop Now</span>
-                                    <Arrowicon className="size-3"/>
+                                    <Arrowicon className="size-3" />
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <div className="w-full">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
-                            {/* <Productcard /> */}
-                            <Productcard thumb="/images/product-2.webp" productName="Waist straight Slouchy jeans" currentPrice="$40" regularPrice="$60" />
-                            
- 
-
-                        </div>
+                </div>
+                <div className="w-full">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
+                        {/* <Productcard /> */}
+                        <Productcard thumb="/images/product-2.webp" productName="Waist straight Slouchy jeans" currentPrice="$40" regularPrice="$60" />
                     </div>
                 </div>
-           
+            </div>
+
         </section>
     );
 };
 
- 
+
