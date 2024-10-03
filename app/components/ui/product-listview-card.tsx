@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { FreeMode, Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 interface ProductCard {
     thumb?: string,
     productName?: string,
@@ -20,14 +20,14 @@ interface ProductCard {
     priceRange?: boolean,
     minimum?: number,
     maximum?: number,
-    dscount?: number,
+    discount?: number,
     rating?: number,
     discription?: string,
     slider?: any[]
 
 }
 export const Productlistviewcard: React.FC<ProductCard> = ({
-    thumb, productName, categoryName, SKU, regularPrice = 1, priceRange = false, minimum, maximum, dscount = 0, rating, discription, slider = []
+    thumb, productName, categoryName, SKU, regularPrice = 1, priceRange = false, minimum, maximum, discount = 0, rating, discription, slider = []
 }) => {
     const [thumbsSwiper, setThumbsSwiper] = React.useState(null)
     const [quickviewmodal, setSuickviewmodal] = React.useState(false)
@@ -90,17 +90,17 @@ export const Productlistviewcard: React.FC<ProductCard> = ({
                     <div className="order-first md:order-none pt-2">
                         <Ratings rating={rating} />
                     </div>
-                    <div className='flex items-center gap-3 pt-3' data-label={dscount}>
+                    <div className='flex items-center gap-3 pt-3' data-label={discount}>
                         {/* Price Range */}
                         {priceRange ?
                             <p className="text-gray-700 font-dm font-semibold text-xl">${minimum} - ${maximum}</p>
                             : <>
-                                {dscount > 0 &&
+                                {discount > 0 &&
                                     <p className="text-gray-700 font-dm font-semibold text-xl">
-                                        ${regularPrice - (regularPrice * dscount / 100)}
+                                        ${regularPrice - (regularPrice * discount / 100)}
                                     </p>
                                 }
-                                <p className="text-lg font-medium line-through text-gray-400 pl-1 ">
+                              <p className={` font-dm  ${discount > 0 ? 'line-through text-gray-400 text-lg pl-1 font-medium':'text-gray-700 text-xl font-semibold'}`}>
                                     ${regularPrice}
                                 </p>
                             </>
@@ -129,13 +129,7 @@ export const Productlistviewcard: React.FC<ProductCard> = ({
                                     <Swiper className="mySwiper2 h-full"
                                         modules={[FreeMode, Navigation, Thumbs]}
                                         thumbs={{ swiper: thumbsSwiper }}
-                                        pagination={{
-                                            clickable: true,
-                                            el: ".pagination",
-                                            renderBullet: function (index, className) {
-                                                return '<span class="cursor-pointer ' + className + '"><span class="invisible">' + (index + 1) + '</span></span>';
-                                            },
-                                        }}
+                                        
                                         loop={true}
                                         navigation={{
                                             nextEl: '.swiper-next',
@@ -197,17 +191,17 @@ export const Productlistviewcard: React.FC<ProductCard> = ({
                                     <Compareicon className="size-4" />
                                 </button>
                             </div>
-                            <div className='flex items-center gap-3 pt-3' data-label={dscount}>
+                            <div className='flex items-center gap-3 pt-3' data-label={discount}>
                                 {/* Price Range */}
                                 {priceRange ?
                                     <p className="text-gray-700 font-dm font-semibold text-xl">${minimum} - ${maximum}</p>
                                     : <>
-                                        {dscount > 0 &&
+                                        {discount > 0 &&
                                             <p className="text-gray-700 font-dm font-semibold text-xl">
-                                                ${regularPrice - (regularPrice * dscount / 100)}
+                                                ${regularPrice - (regularPrice * discount / 100)}
                                             </p>
                                         }
-                                        <p className="text-lg font-medium line-through text-gray-400 pl-1 ">
+                                        <p className={` font-dm  ${discount > 0 ? 'line-through text-gray-400 text-lg pl-1 font-medium':'text-gray-700 text-xl font-semibold'}`}>
                                             ${regularPrice}
                                         </p>
                                     </>

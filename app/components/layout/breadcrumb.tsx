@@ -13,13 +13,13 @@ const Breadcrumb = ({ paths }: any) => {
                     <li key={index} className="inline-flex items-center gap-2">
                         {index !== paths.length - 1 ? (
                             <>
-                            <Link href={path.href} className="text-sm font-dm font-medium ">
+                            <Link href={path.href} className="text-sm font-dm font-medium capitalize ">
                                     {path.name}
                                 </Link>
                              <span className='text-gray-500 text-sm'>/</span>
                              </>
                         ) : (
-                            <span className="text-sm font-medium text-gray-500">{path.name}</span>
+                            <span className="text-sm font-medium text-gray-700 capitalize">{path.name}</span>
                         )}
                     </li>
                 ))}

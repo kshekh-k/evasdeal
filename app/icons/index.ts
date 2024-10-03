@@ -46,5 +46,6 @@ export { default as Listicon } from './svgs/list-icon.svg'
 export { default as Shareicon } from './svgs/share-icon.svg'
 export { default as Plusicon } from './svgs/plus-icon.svg'
 export { default as Minusicon } from './svgs/minus-icon.svg'
+export { default as Cardicon } from './svgs/card-icon.svg'
  
  
