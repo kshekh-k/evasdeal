@@ -8,21 +8,16 @@ import { DigitalProduct } from '../../ui/digital-product'
 import { Usp } from '../../ui/usp'
 import { Coupon } from '../../ui/coupon'
 import { FlashSales } from '../../ui/flash-sales'
-import { Header } from '../../layout/header'
-import { Navbar } from '../../layout/navbar'
 import { Topcategories } from '../../ui/top-categories-of-month'
 import { Weekdeals } from '../../ui/week-deals'
-import {Footer} from '../../layout/footer'
 import {TopBrands} from '../../ui/top-brands'
+import Layout from '../../layout/layout'
 
 export const Homepage: React.FC = () => {
 
   return (
     <>
-      <Header />
-      <Navbar show={true} />
-      <main>
-        <div className='container p-4 xl:px-5'>
+       <Layout>
           <Homehero />
           <section className='hidden lg:grid grid-cols-3 gap-5 layout-wrapper px-4 xl:px-0 md:my-12 my-10  '>
             <div className='col-span-2'>
@@ -38,9 +33,7 @@ export const Homepage: React.FC = () => {
           <AppZone />
           <DigitalProduct />
           <TopBrands />
-        </div>
-      </main>
-      <Footer />
+        </Layout>
     </>
   )
 }

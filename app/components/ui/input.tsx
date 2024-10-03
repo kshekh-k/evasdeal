@@ -2,6 +2,7 @@ import React from 'react'
 interface input {
   type?: string,
   name?: string,
+  value?:any,
   id?: string,
   label?: string,
   placeholder?: string,
@@ -10,17 +11,24 @@ interface input {
   required?: boolean,
   Icon?: React.ElementType,
   iconClass?: string,
+  
 }
-const Input: React.FC<input> = ({ type, name, id, label, placeholder, className, readOnly, required, Icon, iconClass }) => {
+const Input: React.FC<input> = ({ type, name, id, value, label, placeholder, className, readOnly, required, Icon, iconClass, }) => {
+  const [selectedOption, setSelectedOption] = React.useState<any>()
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedOption(event.target.value); // Update the selected option
+  };
   return (
     <div className="relative">
       {label &&
         <label htmlFor={id} className='text-sm font-medium font-dm text-gray-500 pb-2'>{label}</label>
       }
-      <input id={id}
+      <input onChange={handleChange}
+      id={id}
         className={`w-full border border-gray-300 rounded font-normal text-gray-500 text-sm focus:border-primary p-4 outline-none focus:outline-none focus:ring-0 ${className}`}
         type={type}
         name={name}
+        value={value}
         placeholder={placeholder}
         readOnly={readOnly}
         required={required}

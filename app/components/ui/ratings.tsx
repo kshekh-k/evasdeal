@@ -1,10 +1,12 @@
+'use client'
 import { Starhalficon, Staricon, Starlineicon } from '@/app/icons';
 import React from 'react'
-interface RatingProps {
-    rating: number; // The rating out of 5
+interface ratings {
+    rating?: number
 }
+const Ratings: React.FC<ratings> = ({rating = 0}) => {   
+  
 
-const Ratings: React.FC<RatingProps> = ({ rating }) => {
     const renderStars = () => {
         return [...Array(5)].map((_, index) => {
             const starValue = index + 1;
@@ -18,15 +20,13 @@ const Ratings: React.FC<RatingProps> = ({ rating }) => {
         });
     };
     return (
-        <div className='space-y-2 divide-y divide-gray-300'>
-            <h3 className='text-base font-dm font-semibold text-gray-500'>Ratings</h3>
-            <div className='pt-4 flex gap-1 items-center justify-between'>
-                <div className='flex gap-1 items-center'>
-                    {renderStars()}
-                </div>
-                <p className='text-sm font-medium font-dm text-gray-500'>{rating} {rating > 1 ? 'Stars' : 'Star'}</p>
+       
+         
+            <div className='flex gap-1 items-center justify-between w-48' aria-colcount={rating}>               
+                   <div className='w-24 items-center justify-between flex'> {renderStars()} </div>                 
+                <p className='text-sm font-medium font-dm text-gray-500'>({rating} {rating > 1 ? 'Reviews' : 'Review'})</p>
             </div>
-        </div>
+    
     )
 }
 

@@ -40,5 +40,11 @@ export { default as Eyeicon } from './svgs/eye-icon.svg'
 export { default as Eyeofficon } from './svgs/eye-off-icon.svg'
 export { default as Homeicon } from './svgs/home-icon.svg'
 export { default as Checkicon } from './svgs/check-icon.svg'
+export { default as Sorticon } from './svgs/sort-icon.svg'
+export { default as Gridicon } from './svgs/grid-icon.svg'
+export { default as Listicon } from './svgs/list-icon.svg'
+export { default as Shareicon } from './svgs/share-icon.svg'
+export { default as Plusicon } from './svgs/plus-icon.svg'
+export { default as Minusicon } from './svgs/minus-icon.svg'
  
  

@@ -7,9 +7,11 @@ import { Topbar } from "../ui/top-bar"
 import { Search } from "../ui/search"
 import { Shoppingcart } from '../ui/shopping-cart'
 import { Shigninsignup } from '../ui/singin-signup'
+import { useRouter, usePathname } from 'next/navigation'
 export const Header: React.FC = () => {
     const [cartPanel, setCartPanel] = React.useState(false)
     const [signinup, setSigninup] = React.useState(false)
+    const [itemsincart, setItemsincart] = React.useState(0)
     React.useEffect(() => {
         if (cartPanel) {
             document.body.classList.add('overflow-hidden');
@@ -64,7 +66,7 @@ export const Header: React.FC = () => {
                                 <li className="hidden md:block ml-5">
                                     <div className="flex flex-col justify-center items-center">
                                         <button onClick={() => setSigninup(!signinup)}
-                                            className="md:px-2 lg:px-0 py-2 flex flex-col gap-1 w-fill justify-center items-center hover:text-primary ease-in-out duration-200"
+                                            className="md:px-2 lg:px-0 py-2 text-gray-600 flex flex-col gap-1 w-fill justify-center items-center hover:text-primary ease-in-out duration-200"
                                         >
                                             <Hearticon className="size-5" />
 
@@ -77,7 +79,12 @@ export const Header: React.FC = () => {
                                 </li>
 
                                 <li className="absolute md:relative ml-5">
-                                    <button onClick={() => setCartPanel(!cartPanel)} className="flex flex-col justify-center gap-1 items-center md:px-2 lg:px-0 py-2 hover:text-primary ease-in-out duration-200 ">
+                                    {itemsincart > 0 && 
+                                    <span className='absolute right-0 font-medium font-dm text-[10px] flex items-center justify-center rounded-full h-4 min-w-4 bg-primary text-white'>
+                                        1
+                                    </span>
+                                    }
+                                    <button onClick={() => setCartPanel(!cartPanel)} className="flex flex-col text-gray-600 justify-center gap-1 items-center md:px-2 lg:px-0 py-2 hover:text-primary ease-in-out duration-200 ">
                                         <Shoppingbagicon className="size-5" />
                                         <span className="text-xs font-medium text-center whitespace-nowrap" >
                                             Your Cart
@@ -85,7 +92,7 @@ export const Header: React.FC = () => {
                                     </button>
                                 </li>
                                 <li className=" ml-5">
-                                    <Link href={'/track-order'} className="relative flex flex-col justify-center items-center md:px-2 lg:px-0 py-2 gap-1 hover:text-primary ease-in-out duration-200">
+                                    <Link href={'/track-order'} className="relative flex flex-col text-gray-600 justify-center items-center md:px-2 lg:px-0 py-2 gap-1 hover:text-primary ease-in-out duration-200">
                                         <Compassicon className="size-5" />
                                         <span className="text-xs font-medium text-center whitespace-nowrap" >
                                             Track Order

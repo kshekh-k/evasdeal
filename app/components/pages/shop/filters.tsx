@@ -4,7 +4,7 @@ import Relatedcategories from './related-categories'
 import Pricerange from './price-range'
 import Colors from './colors'
 import Checkfilters from './check-filters'
-import Ratings from './ratings'
+import Ratingsasign from '../../ui/ratings-asign'
 const b2b = [
     {
         id:1,
@@ -86,7 +86,7 @@ const size = [
     
 ]
 function Filters() {
-    const productRating = 3.5;
+ 
     return (
         <div className='border border-gray-300 rounded-md p-4 flex flex-col gap-7 '>
             <div className='flex justify-between items-center'>
@@ -100,8 +100,8 @@ function Filters() {
             <Checkfilters title="Impedance" list={impedance} />
             <Checkfilters title="Power Output" list={powerOutput} />
             <Checkfilters title="Connection Type" list={connectionType} />
-            <Checkfilters title="Size" list={size} />
-            <Ratings rating={productRating} />
+            <Checkfilters title="Size" list={size} />           
+            <Ratingsasign />
         </div>
     )
 }

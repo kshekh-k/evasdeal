@@ -2,7 +2,8 @@
 import Link from 'next/link'
 import React from 'react'
 import { Categories } from '../ui/categories'
-import { Mobileicon } from '@/app/icons'
+import { Mobileicon } from '@/app/icons' 
+import { useRouter, usePathname } from 'next/navigation'
 interface categories {
     show?:boolean
 }
@@ -47,6 +48,12 @@ const menus = [
     },
 ]
 export const Navbar: React.FC<categories> = ({show=false}) => {
+    const active = usePathname();
+    const router = useRouter();
+ 
+      const handleNavLink = (routerName:any) =>{
+        router.push(routerName)
+    }
     return (
         <div className='border-y border-gray-300 '>
             <div className='container px-4 xl:px-5 flex justify-between w-full'>
@@ -58,9 +65,9 @@ export const Navbar: React.FC<categories> = ({show=false}) => {
                     <ul className='flex text-white md:text-black items-stretch -mx-4'>
                         {menus.map((item, index) =>
                             <li key={index} className={`relative flex items-center group px-4 after:border-r after:border-gray-300 after:absolute after:right-0 after:h-5 ${index === menus.length - 1 && 'after:hidden'}`}>
-                                <Link href={item.url} className={`group-hover:text-primary text-gray-700 underline-offset-8 decoration-4 group-hover:underline ease-in-out duration-200 `}>
+                                <button onClick={() => handleNavLink(item.url)} className={`outline-none focus:ring-0 underline-offset-8 decoration-3 ease-in-out duration-200  ${active === item.url ? 'text-primary underline':'text-gray-700 group-hover:text-primary group-hover:underline'}`}>
                                     {item.label}
-                                </Link>
+                                </button>
                                 {item.level1 && 
                                 <ul className='text-sm bg-white font-dm absolute rounded-b-md border border-gray-300 shadow-1 w-52 divide-y divide-gray-300  ease-in-out duration-200 z-20 left-auto top-full hidden group-hover:block '>
                                     {item.level1?.map((itemLevel1, i)=>

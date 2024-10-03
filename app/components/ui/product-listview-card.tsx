@@ -1,5 +1,5 @@
 'use client'
-import { Anglelefticon, Anglerighticon, Compareicon, Hearticon, Shareicon, Shoppingbagicon, Staricon } from '@/app/icons'
+import { Anglelefticon, Anglerighticon, Compareicon, Hearticon, Shareicon, Shoppingbagicon, } from '@/app/icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -9,8 +9,8 @@ import Counter from './counter'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-
+import "swiper/css/pagination";
+import { FreeMode, Navigation, Pagination, Thumbs } from 'swiper/modules';
 interface ProductCard {
     thumb?: string,
     productName?: string,
@@ -26,7 +26,7 @@ interface ProductCard {
     slider?: any[]
 
 }
-export const Productcard: React.FC<ProductCard> = ({
+export const Productlistviewcard: React.FC<ProductCard> = ({
     thumb, productName, categoryName, SKU, regularPrice = 1, priceRange = false, minimum, maximum, dscount = 0, rating, discription, slider = []
 }) => {
     const [thumbsSwiper, setThumbsSwiper] = React.useState(null)
@@ -44,8 +44,8 @@ export const Productcard: React.FC<ProductCard> = ({
     }, [quickviewmodal]);
     return (
         <>
-            <div className='flex flex-col group'>
-                <div className="border rounded-md relative ">
+            <div className='flex gap-5 items-start '>
+                <div className="border rounded-md relative group w-60 shrink-0">
                     <div className="h-48 flex justify-center items-center">
                         <Link href="#" className="w-full h-full">
                             <Image className="w-full h-full object-cover rounded-md neg-transition-scale" src={`${thumb}`} alt="Image" width={200} height={200} />
@@ -63,43 +63,34 @@ export const Productcard: React.FC<ProductCard> = ({
 
                         <div className="w-full h-full flex justify-end cursor-pointer pt-15p ">
                             <div className="relative flex flex-col gap-2">
-                                <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-400 border border-gray-2 rounded-full hover:bg-primary hover:text-white bg-white"  >
+                                <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-400 border border-gray-300 rounded-full hover:bg-primary hover:text-white bg-white"  >
 
                                     <Shoppingbagicon className="size-3" />
 
                                 </button>
 
-                                <button className="h-6 w-6 flex justify-center items-center p-1  text-gray-400 relative hover:bg-primary hover:text-white border border-gray-2 rounded-full bg-white">
+                                <button className="h-6 w-6 flex justify-center items-center p-1  text-gray-400 relative hover:bg-primary hover:text-white border border-gray-300 rounded-full bg-white">
                                     <Hearticon className="size-3" />
                                 </button>
 
-                                <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-400 bg-white hover:bg-primary hover:text-white border border-gray-2 rounded-full">
+                                <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-400 bg-white hover:bg-primary hover:text-white border border-gray-300 rounded-full">
                                     <Compareicon className="size-3" />
                                 </button>
                             </div>
 
-                            <div className="flex gap-2 absolute bottom-0 inset-x-0 p-1">
-                                <button onClick={() => setSuickviewmodal(!quickviewmodal)} className="text-white font-medium py-1 px-3 rounded flex-1 text-center text-xs bg-primary hover:bg-primary-2 ease-in-out duration-200 z-20">
-                                    Quick View
-
-                                </button>
-                                <button className="text-white font-medium py-1 px-3 rounded flex-1 text-center text-xs bg-primary hover:bg-primary-2 ease-in-out duration-200 z-20">
-                                    Buy Now
-
-                                </button>
-                            </div>
                         </div>
 
                     </div>
                 </div>
-                <div className="sm:text-center flex flex-col pt-3">
-                    <p className='text-sm text-gray-400 font-medium font-dm text-center'>{categoryName}</p>
+                <div className="sm:text-left flex flex-col">
+                    <p className='text-sm text-gray-400 font-medium font-dm text-left'>{categoryName}</p>
 
-                    <h2 className="text-xl font-dm font-medium text-center"><Link href="#" className='text-gray-700 hover:text-primary ease-in-out duration-200'>{productName}</Link></h2>
-                    <div className="flex justify-center order-first md:order-none pt-2">
+                    <h2 className="text-xl font-dm font-medium text-left"><Link href="#" className='text-gray-700 hover:text-primary ease-in-out duration-200'>{productName}</Link></h2>
+
+                    <div className="order-first md:order-none pt-2">
                         <Ratings rating={rating} />
                     </div>
-                    <div className='flex items-center justify-center text-center gap-3 pt-3' data-label={dscount}>
+                    <div className='flex items-center gap-3 pt-3' data-label={dscount}>
                         {/* Price Range */}
                         {priceRange ?
                             <p className="text-gray-700 font-dm font-semibold text-xl">${minimum} - ${maximum}</p>
@@ -115,10 +106,19 @@ export const Productcard: React.FC<ProductCard> = ({
                             </>
                         }
                     </div>
-                    <p className='text-sm text-gray-400 font-dm font-medium text-left pt-2 hidden'>{discription}</p>
+                    <p className='text-sm text-gray-400 font-dm font-medium text-left pt-2'>{discription}</p>
+                    <div className="flex gap-2 pt-4 max-w-64">
+                        <button onClick={() => setSuickviewmodal(!quickviewmodal)} className="hover:text-white text-primary font-medium py-2 px-3 rounded flex-1 text-center text-xs border border-primary hover:bg-primary ease-in-out duration-200 z-20">
+                            Quick View
+                        </button>
+                        <button className="text-white font-medium py-2 px-3 rounded flex-1 text-center text-xs bg-primary hover:bg-primary-2 ease-in-out duration-200 z-20">
+                            Buy Now
+                        </button>
+                    </div>
+
+
                 </div>
             </div>
-
             {quickviewmodal &&
                 <Quickview onClick={() => setSuickviewmodal(!quickviewmodal)}>
                     <div className='flex flex-col md:grid md:grid-cols-12 gap-5 '>
@@ -223,7 +223,6 @@ export const Productcard: React.FC<ProductCard> = ({
                     </div>
                 </Quickview>
             }
-
         </>
     )
 }
