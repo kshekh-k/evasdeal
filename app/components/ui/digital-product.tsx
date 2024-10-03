@@ -5,6 +5,7 @@ import React from 'react';
 import { Productcard } from './product-card';
 import Link from 'next/link';
 import Image from 'next/image';
+import Ratings from './ratings';
 export const DigitalProduct: React.FC = () => {
 
     return (
@@ -46,10 +47,10 @@ export const DigitalProduct: React.FC = () => {
 
                                     <div className="w-full h-full flex justify-end cursor-pointer pt-15p ">
                                         <div className="relative space-y-3">
-                                            <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-12 border border-gray-2 rounded-full hover:bg-primary bg-white"  >
+                                        <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-400 border border-gray-2 rounded-full hover:bg-primary hover:text-white bg-white"  >
                                                 <Shoppingbagicon className="size-3" />
                                             </button>
-                                            <button className="h-6 w-6 flex justify-center items-center p-1  text-gray-12 relative hover:bg-primary border border-gray-2 rounded-full bg-white">
+                                            <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-400 border border-gray-2 rounded-full hover:bg-primary hover:text-white bg-white"  >
                                                 <Compareicon className="size-3" />
                                             </button>
                                         </div>
@@ -65,40 +66,11 @@ export const DigitalProduct: React.FC = () => {
 
                                 </div>
                             </div>
-                            <div className="sm:text-center flex flex-col">
-                                <Link href="#">
-                                    <p className="text-gray-600 md:mt-2 ine-clamp">Waist straight Slouchy jeans</p>
-                                </Link>
-                                <div className="item-rating order-first md:order-none md:mt-0 mt-2">
-                                    <div className="self-top">
-                                        <div className="flex gap-2 items-center justify-center">
-                                            <ul className="flex flex-wrap sm:justify-center items-center gap-1">
-                                                <li>
-                                                    <Staricon className="size-2" />
-                                                </li>
-
-                                                <li>
-                                                    <Staricon className="size-2" />
-                                                </li>
-
-                                                <li>
-                                                    <Staricon className="size-2" />
-                                                </li>
-
-                                                <li>
-                                                    <Staricon className="size-2" />
-                                                </li>
-
-                                                <li>
-                                                    <Staricon className="size-2" />
-                                                </li>
-                                            </ul>
-                                            <p className="text-gray-400 text-xs font-dm">
-                                                (3 Reviews)
-                                            </p>
-
-                                        </div>
-                                    </div>
+                            <div className="sm:text-center flex flex-col pt-3">
+                              
+                                <h2 className="text-xl font-dm font-medium text-center"><Link href="#" className='text-gray-700 hover:text-primary ease-in-out duration-200'>Waist straight Slouchy jeans</Link></h2>
+                                <div className="flex justify-center order-first md:order-none py-2">
+                                <Ratings rating={3.5} />
                                 </div>
                                 <div className='flex justify-center items-center gap-3'>
                                     <p className="text-gray-700 font-dm font-semibold">

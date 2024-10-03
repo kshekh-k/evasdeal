@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
                             <ul className="flex -mt-1.5">
                                 <li className="hidden md:block ml-5">
                                     {/* unauthenticated */}
-                                    <button onClick={() => setSigninup(!signinup)} className="flex flex-col gap-1 justify-center items-center cursor-pointer mt-2 hover:text-primary ease-in-out duration-200">
+                                    <button onClick={() => setSigninup(!signinup)} className="flex flex-col text-gray-600 gap-1 justify-center items-center cursor-pointer mt-2 hover:text-primary ease-in-out duration-200">
                                         <Usericon className="size-5" />
                                         <span className="text-xs font-medium text-center " >
                                             Account

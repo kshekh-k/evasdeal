@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image' 
 import React from 'react'
-import { Productcard } from './product-card' 
-import { Staricon } from '@/app/icons'
+import { Productcard } from './product-card'  
+import Ratings from './ratings'
 
 export const FlashSales: React.FC  = () => {
     return (
@@ -29,34 +29,8 @@ export const FlashSales: React.FC  = () => {
                                 Waist straight Slouchy jeans
                             </p>
 
-                            <div className="item-rating">
-                                <div className="flex gap-2 justify-center items-center">
-                                    <ul className="flex justify-center gap-1 pt-1">
-                                    <li>
-                                            <Staricon className="size-3" />
-                                        </li>
-
-                                        <li>
-                                        <Staricon className="size-3" />
-                                        </li>
-
-                                        <li>
-                                        <Staricon className="size-3" />
-                                        </li>
-
-                                        <li>
-                                        <Staricon className="size-3" />
-                                        </li>
-
-                                        <li>
-                                        <Staricon className="size-3" />
-                                        </li>
-                                    </ul>
-
-                                    <p className="text-gray-400 text-sm font-dm mt-1.5">
-                                        ( Review)
-                                    </p>
-                                </div>
+                            <div className="flex justify-center">
+                                <Ratings rating={2.5} />
                             </div>
                             <div className='flex justify-center items-center gap-3'>
                             <p className="text-xl text-gray-700 font-dm font-semibold">
@@ -71,7 +45,7 @@ export const FlashSales: React.FC  = () => {
                 </div>
                 <div className="w-full">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
-                       <Productcard thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" currentPrice="$40" regularPrice="$60" />
+                       <Productcard rating={3.5} slider={['/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', ]} categoryName='Home Appliances' thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" priceRange={true} minimum={40} maximum={100} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
                     </div>
                 </div>
 

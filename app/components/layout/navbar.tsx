@@ -65,7 +65,7 @@ export const Navbar: React.FC<categories> = ({show=false}) => {
                     <ul className='flex text-white md:text-black items-stretch -mx-4'>
                         {menus.map((item, index) =>
                             <li key={index} className={`relative flex items-center group px-4 after:border-r after:border-gray-300 after:absolute after:right-0 after:h-5 ${index === menus.length - 1 && 'after:hidden'}`}>
-                                <button onClick={() => handleNavLink(item.url)} className={`outline-none focus:ring-0 underline-offset-8 decoration-3 ease-in-out duration-200  ${active === item.url ? 'text-primary underline':'text-gray-700 group-hover:text-primary group-hover:underline'}`}>
+                                <button onClick={() => handleNavLink(item.url)} className={`outline-none focus:ring-0 underline-offset-8 decoration-3 ease-in-out duration-200  ${active === item.url ? 'text-primary underline':'text-gray-600 group-hover:text-primary group-hover:underline'}`}>
                                     {item.label}
                                 </button>
                                 {item.level1 && 

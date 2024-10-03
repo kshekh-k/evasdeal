@@ -50,7 +50,7 @@ export const FurnitureZone: React.FC = () => {
                 <div className="w-full">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
                         {/* <Productcard /> */}
-                        <Productcard thumb="/images/product-2.webp" productName="Waist straight Slouchy jeans" currentPrice="$40" regularPrice="$60" />
+                        <Productcard rating={3.5} slider={['/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', ]} categoryName='Home Appliances' thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" priceRange={true} minimum={40} maximum={100} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
                     </div>
                 </div>
             </div>
