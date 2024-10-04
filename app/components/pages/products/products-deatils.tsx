@@ -15,7 +15,7 @@ interface ProductCard {
     productName?: string,
     categoryName?: string,
     SKU?: number,
-    regularPrice?: number,
+    price?: number,
     priceRange?: boolean,
     minimum?: number,
     maximum?: number,
@@ -26,7 +26,7 @@ interface ProductCard {
 
 }
 const Productsdetails: React.FC<ProductCard> = ({
-    productName, categoryName, SKU, regularPrice = 1, priceRange = false, minimum, maximum, discount = 0, rating, discription, slider = sliders
+    productName, categoryName, SKU, price = 1, priceRange = false, minimum, maximum, discount = 0, rating, discription, slider = sliders
 }) => {
     const [thumbsSwiper, setThumbsSwiper] = React.useState(null)
     return (
@@ -109,14 +109,14 @@ const Productsdetails: React.FC<ProductCard> = ({
                         : <>
                             {discount > 0 &&
                                 <p className="text-gray-700 font-dm font-semibold text-xl">
-                                    ${regularPrice - (regularPrice * discount / 100)}
+                                    ${price - (price * discount / 100)}
                                 </p>
                             }
                             <p className={` font-dm  ${discount > 0 ? 'line-through text-gray-400 text-lg pl-1 font-medium' : 'text-gray-700 text-xl font-semibold'}`}>
-                                ${regularPrice}
+                                ${price}
                             </p>
                             {discount > 0 &&
-                                <p className='text-primary text-sm font-semibol'>You saved: ${regularPrice * discount / 100}</p>
+                                <p className='text-primary text-sm font-semibol'>You saved: ${price * discount / 100}</p>
                             }
                         </>
                     }
