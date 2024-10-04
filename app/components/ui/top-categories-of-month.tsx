@@ -44,13 +44,13 @@ export const Topcategories: React.FC = () => {
     <section className="my-10 md:my-12 space-y-5" >
 
       <h2 className="font-bold text-sm md:text-[22px] text-center text-gray-900 uppercase font-dm">Top Categories of the Month</h2>
-      <div className='grid lg:grid-cols-7 lg:gap-7 grid-flow-col lg:grid-flow-row gap-4 auto-cols-max overflow-auto'>
+      <div className='flex flex-wrap lg:grid lg:grid-cols-7 lg:gap-7 gap-4 auto-cols-max overflow-auto'>
         {TopCategoriesThisMonth.map((item, index) =>
-          <Link key={index} href={item.url} className='flex group'>
-            <div className="border border-gray-300 group-hover:border-primary group-hover:bg-primary ease-in-out duration-200 rounded-md relative w-full ">
-              <div className="flex justify-center items-center h-130p">
+          <Link key={index} href={item.url} className='flex group min-w-28 flex-1'>
+            <div className="border border-gray-300 group-hover:border-primary group-hover:bg-primary ease-in-out duration-200 rounded-md relative w-full p-5 ">
+              <div className="flex justify-center items-center lg:h-32 ">
                 <Image width={200} height={200}
-                  className="md:h-16 md:w-16 w-66p h-66p object-contain group-hover:-translate-y-2 ease-in-out duration-200"
+                  className="h-auto w-auto object-contain group-hover:-translate-y-2 ease-in-out duration-200"
                   src={item.thumb}
                   alt="Image"
                 />

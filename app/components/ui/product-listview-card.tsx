@@ -44,7 +44,7 @@ export const Productlistviewcard: React.FC<ProductCard> = ({
     }, [quickviewmodal]);
     return (
         <>
-            <div className='flex gap-5 items-start '>
+            <div className='flex flex-col sm:flex-row gap-5 items-start '>
                 <div className="border rounded-md relative group w-60 shrink-0">
                     <div className="h-48 flex justify-center items-center">
                         <Link href="#" className="w-full h-full">
@@ -87,7 +87,7 @@ export const Productlistviewcard: React.FC<ProductCard> = ({
 
                     <h2 className="text-xl font-dm font-medium text-left"><Link href="#" className='text-gray-700 hover:text-primary ease-in-out duration-200'>{productName}</Link></h2>
 
-                    <div className="order-first md:order-none pt-2">
+                    <div className="pt-2">
                         <Ratings rating={rating} />
                     </div>
                     <div className='flex items-center gap-3 pt-3' data-label={discount}>
@@ -207,7 +207,7 @@ export const Productlistviewcard: React.FC<ProductCard> = ({
                                     </>
                                 }
                             </div>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 flex-col sm:flex-row">
                                 <Counter />
                                 <button className="text-white font-medium flex gap-1 justify-center items-center py-2 px-3 rounded flex-1 text-center font-dm bg-primary hover:bg-primary-2 ease-in-out duration-200 z-20">
                                     <Shoppingbagicon className="size-5" /><span>Add to Cart</span>

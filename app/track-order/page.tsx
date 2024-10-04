@@ -8,7 +8,7 @@ const Trackorder = () => {
   return (
     <>
       <Layout>
-        <div className="grid md:grid-cols-3 grid-cols-1 items-center w-full py-20">
+        <div className="md:grid md:grid-cols-3 flex flex-col gap-10 items-center w-full py-10 md:py-20">
           <form className="w-full block">
             <div className="w-full">
               <h2 className="text-xl font-dm text-gray-600 ">

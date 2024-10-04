@@ -3,9 +3,10 @@ import { Starhalficon, Staricon, Starlineicon } from '@/app/icons';
 import React from 'react'
 interface ratings {
     rating?: number,
-    className?:string
+    className?:string,
+    reviewtext?:string,
 }
-const Ratings: React.FC<ratings> = ({rating = 0, className}) => {   
+const Ratings: React.FC<ratings> = ({rating = 0, className,reviewtext}) => {   
   
 
     const renderStars = () => {
@@ -25,7 +26,7 @@ const Ratings: React.FC<ratings> = ({rating = 0, className}) => {
          
             <div className={`flex gap-1 items-center justify-between w-48 ${className}`} aria-colcount={rating}>               
                    <div className='w-24 items-center justify-between flex'> {renderStars()} </div>                 
-                <p className='text-sm font-medium font-dm text-gray-500'>({rating} {rating > 1 ? 'Reviews' : 'Review'})</p>
+                <p className='text-sm font-medium font-dm text-gray-500'>({rating} <span className={reviewtext}>{rating > 1 ? 'Reviews' : 'Review'}</span>)</p>
             </div>
     
     )

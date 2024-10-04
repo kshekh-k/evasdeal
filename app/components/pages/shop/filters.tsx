@@ -88,7 +88,7 @@ const size = [
 function Filters() {
  
     return (
-        <div className='border border-gray-300 rounded-md p-4 flex flex-col gap-7 '>
+        <div className='md:border md:border-gray-300 md:rounded-md p-4 md:p-2 lg:p-4 flex flex-col gap-7 '>
             <div className='flex justify-between items-center'>
                 <h2 className='font-dm font-semibold leading-none text-lg text-gray-900 uppercase'>Filters</h2>
                 <button className="flex items-center justify-center gap-1 ml-2 py-2 text-sm focus:outline-none text-gray-500 hover:text-red-600 ease-in-out duration-200">Clear All <Crossicon className="size-2" /></button>

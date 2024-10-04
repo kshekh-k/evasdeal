@@ -95,11 +95,11 @@ export const Productcard: React.FC<ProductCard> = ({
                 <div className="sm:text-center flex flex-col pt-3">
                     <p className='text-sm text-gray-400 font-medium font-dm text-center'>{categoryName}</p>
 
-                    <h2 className="text-xl font-dm font-medium text-center"><Link href="#" className='text-gray-700 hover:text-primary ease-in-out duration-200'>{productName}</Link></h2>
-                    <div className="flex justify-center order-first md:order-none pt-2">
-                        <Ratings rating={rating} />
+                    <h2 className="text-lg sm:text-xl sm:leading-snug leading-snug font-dm font-medium text-center pt-1"><Link href="#" className='text-gray-700 hover:text-primary ease-in-out duration-200'>{productName}</Link></h2>
+                    <div className="flex justify-center pt-2">
+                        <Ratings rating={rating} reviewtext={'hidden xl:inline-block'} />
                     </div>
-                    <div className='flex items-center justify-center text-center gap-3 pt-3' data-label={discount}>
+                    <div className='flex items-center justify-center text-center gap-3 pt-2' data-label={discount}>
                         {/* Price Range */}
                         {priceRange ?
                             <p className="text-gray-700 font-dm font-semibold text-xl">${minimum} - ${maximum}</p>
@@ -213,7 +213,7 @@ export const Productcard: React.FC<ProductCard> = ({
                                     </>
                                 }
                             </div>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 flex-col sm:flex-row">
                                 <Counter />
                                 <button className="text-white font-medium flex gap-1 justify-center items-center py-2 px-3 rounded flex-1 text-center font-dm bg-primary hover:bg-primary-2 ease-in-out duration-200 z-20">
                                     <Shoppingbagicon className="size-5" /><span>Add to Cart</span>

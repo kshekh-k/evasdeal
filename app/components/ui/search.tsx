@@ -12,13 +12,13 @@ interface Searches {
 export const Search: React.FC<Searches> = () => {
   return (
     <>
-      <div className="md:w-46% w-full ml-32">
+     
         <form
           method="GET"
           action=""
         >
           <div className="relative bg-white ">
-            <Input type="search" name="keyword" placeholder="Type your product name.." className='px-14' Icon={Searchicon} iconClass='left-0' />
+            <Input type="search" name="keyword" placeholder="Type your product name.." className='px-14 !py-2' Icon={Searchicon} iconClass='left-0 after:!h-6' />
             <div className='absolute inset-y-0 right-0 w-14 flex items-stretch p-1'>
               <button
                 type="submit"
@@ -29,7 +29,7 @@ export const Search: React.FC<Searches> = () => {
             </div>
           </div>
         </form>
-      </div>
+      
     </>
   )
 }

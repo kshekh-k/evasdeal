@@ -1,12 +1,21 @@
-'use client'
-import { Angledownicon, Anglerighticon, Baricon } from '@/app/icons'
-import Image from 'next/image'
-import Link from 'next/link'
+import { Angledownicon, Anglerighticon } from '@/app/icons';
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
-interface categories {
-    show?: boolean
+interface ListItemProps {
+    label?: string;
+    url?: string;
+    icon?: string;
+    subCat?: ListItemProps[];
 }
-const categoriesList = [
+interface NestedListItem {
+    label?: string;
+    url?: string;
+    icon?: string;
+    subCat?: NestedListItem[];
+}
+
+const categoriesList: NestedListItem[] = [
     {
         label: 'Electronic Devices',
         url: '#',
@@ -15,7 +24,7 @@ const categoriesList = [
             {
                 label: 'Smartphones',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Realme Phones',
                         url: '#',
@@ -57,7 +66,7 @@ const categoriesList = [
             {
                 label: 'Feature Phone',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Nokia Feature Phones',
                         url: '#',
@@ -71,7 +80,7 @@ const categoriesList = [
             {
                 label: 'Laptops',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'HP Laptops',
                         url: '#',
@@ -97,7 +106,7 @@ const categoriesList = [
             {
                 label: 'Cameras',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'DSLR',
                         url: '#',
@@ -123,7 +132,7 @@ const categoriesList = [
             {
                 label: 'Security Cameras',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'IP Security Cameras',
                         url: '#',
@@ -145,7 +154,7 @@ const categoriesList = [
             {
                 label: 'Mobile Accessories',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Phone Cases',
                         url: '#',
@@ -171,7 +180,7 @@ const categoriesList = [
             {
                 label: 'Audio',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Headphones & Headset',
                         url: '#',
@@ -193,7 +202,7 @@ const categoriesList = [
             {
                 label: 'Wearable',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Smartwatches',
                         url: '#',
@@ -207,7 +216,7 @@ const categoriesList = [
             {
                 label: 'Console Accessories',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Playstation Controllers',
                         url: '#',
@@ -221,7 +230,7 @@ const categoriesList = [
             {
                 label: 'Camera Accessories',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Memory Cards',
                         url: '#',
@@ -264,7 +273,7 @@ const categoriesList = [
             {
                 label: 'Computer Accessories',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Monitors',
                         url: '#',
@@ -295,7 +304,7 @@ const categoriesList = [
             {
                 label: 'Storage',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Storage',
                         url: '#',
@@ -318,7 +327,7 @@ const categoriesList = [
             {
                 label: 'Printer',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Printers',
                         url: '#',
@@ -341,7 +350,7 @@ const categoriesList = [
             {
                 label: 'Computer Components',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Graphic Cards',
                         url: '#',
@@ -372,7 +381,7 @@ const categoriesList = [
             {
                 label: 'Network Components',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Access Points',
                         url: '#',
@@ -403,7 +412,7 @@ const categoriesList = [
             {
                 label: 'Software',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Educational Media',
                         url: '#',
@@ -433,7 +442,7 @@ const categoriesList = [
             {
                 label: 'Bath & Body',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Body & Massage Oils',
                         url: '#',
@@ -475,7 +484,7 @@ const categoriesList = [
             {
                 label: 'Beauty Tools',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Curling Irons & Wands',
                         url: '#',
@@ -513,7 +522,7 @@ const categoriesList = [
             {
                 label: 'Fragrances',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Women Fragrances',
                         url: '#',
@@ -533,7 +542,7 @@ const categoriesList = [
             {
                 label: 'Hair Care',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Shampoo',
                         url: '#',
@@ -567,7 +576,7 @@ const categoriesList = [
             {
                 label: "Men's Care",
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Deodorants',
                         url: '#',
@@ -590,7 +599,7 @@ const categoriesList = [
             {
                 label: 'Personal Care',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Oral Care',
                         url: '#',
@@ -605,7 +614,7 @@ const categoriesList = [
             {
                 label: 'Skin Care',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Moisturizers & Creams',
                         url: '#',
@@ -640,7 +649,7 @@ const categoriesList = [
             {
                 label: 'Food Supplements',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Beauty Supplements',
                         url: '#',
@@ -667,7 +676,7 @@ const categoriesList = [
             {
                 label: 'Medical Supplies',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'First Aid Supplies',
                         url: '#',
@@ -718,7 +727,7 @@ const categoriesList = [
             {
                 label: 'Feeding',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Baby & Toddler Foods',
                         url: '#',
@@ -736,7 +745,7 @@ const categoriesList = [
             {
                 label: 'Men Fashion',
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Jackets & Coats',
                         url: '#',
@@ -754,7 +763,7 @@ const categoriesList = [
             {
                 label: "Men's Watch",
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Casual',
                         url: '#',
@@ -772,7 +781,7 @@ const categoriesList = [
             {
                 label: "Cycling",
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Bicycle',
                         url: '#',
@@ -790,7 +799,7 @@ const categoriesList = [
             {
                 label: "Automobile",
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Imported Cars',
                         url: '#',
@@ -808,7 +817,7 @@ const categoriesList = [
             {
                 label: "Small Kitchen Appliances",
                 url: '#',
-                cates: [
+                subCat: [
                     {
                         label: 'Food Preparation',
                         url: '#',
@@ -826,12 +835,12 @@ const categoriesList = [
             {
                 label: "HTML",
                 url: '#',
-                cates: []
+                subCat: []
             },
             {
                 label: "WordPress",
                 url: '#',
-                cates: []
+                subCat: []
             },
 
         ]
@@ -844,7 +853,7 @@ const categoriesList = [
             {
                 label: "Envato",
                 url: '#',
-                cates: []
+                subCat: []
             },
 
         ]
@@ -853,66 +862,60 @@ const categoriesList = [
 
 ]
 
-export const Categories: React.FC<categories> = ({ show = false }) => {
+
+
+
+// function List  ({label, url, subItems=[], subItems2=[]}:any)  {
+const List: React.FC<ListItemProps> = ({ label, url, icon, subCat = [] }: any) => {
+    const [isLevel, setIslevel] = React.useState(false);
+    const toggleIsLevel = () => {
+        setIslevel((prev) => !prev);
+    };
+
+    return (
+    <>
+        <li className='relative font-dm'>
+            <div className='flex gap-1'>
+                <Link href={url} className='flex flex-1 items-center justify-start w-full xl:h-12 text-white ease-in-out duration-200 font-medium py-2 gap-3 '>
+                    <span className='text-sm'>{label}</span>
+                </Link>
+                {subCat && subCat.length > 0 && <button onClick={toggleIsLevel} className='py-2 pl-3 text-white'><Anglerighticon className={`size-3 ${isLevel ? 'rotate-90' : ''}`} /></button>}
+            </div>
+            {isLevel && subCat &&
+                <ul className='p-3'>
+                    {subCat?.map((subCitem: any, si: any) =>
+                        <List key={si} label={subCitem.label} url={subCitem.url} subCat={subCitem.subCat} />
+                    )}
+                </ul>
+            }
+        </li>
+    </>
+    )
+}
+
+export default function Responsivecategories() {
     const [showless, setShowless] = React.useState(8)
     const toggleNumber = () => {
         setShowless((prevNumber) => (prevNumber === categoriesList.length ? 8 : categoriesList.length));
     };
 
     return (
-        <div className='relative z-40 group'>
-            <button className="relative w-full md:flex items-center border-r border-l cursor-pointer lg:h-16 py-3 px-5 hidden bg-gray-50 text-gray-600 gap-4">
-                <Baricon className='size-6' />
-                <span className="text-base flex-1 text-left">Categories</span>
-                <Angledownicon className='size-3' />
-            </button>
+      
+            <ul className="py-3">
+                {categoriesList.slice(0, showless).map((item, index) => (
+                    <List key={index} label={item.label} url={item.url} icon={item.icon} subCat={item.subCat} />
+                ))}
 
-            <div className={`bg-white border border-gray-300 absolute top-full z-30  w-full ${show ? '' : 'hidden group-hover:block'}`}>
-                <ul className="divide-y divide-gray-300">
-                    {categoriesList.slice(0, showless).map((item, index) => (
-                        <li key={`cat-less-${index}`} className='group/main relative font-dm'>
-                            <Link href="#" className='flex items-center justify-start w-full xl:h-12 text-gray-600  ease-in-out duration-200 font-medium px-3 md:py-2 xl:px-5 gap-3 lg:group-hover/main:indent-2 group-hover/main:bg-primary group-hover/main:text-white'>
-                                <span className='xl:size-5 size-4 group-hover/main:translate-x-2 ease-in-out duration-200'><Image src={item.icon} alt={item.label} width={20} height={20} /></span>
-                                <span className='text-sm flex-1'>{item.label}</span>
-                                {item.subCat && <Anglerighticon className="size-3" />}
-                            </Link>
-                            <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/main:block'>
-                                {item.subCat?.map((subCitem, si) =>
-                                    <li key={si} className='relative group/item'>
-                                        <Link href={subCitem.url} className={`flex py-3 px-4 text-gray-600 items-center ease-in-out duration-200 group-hover/item:indent-2 group-hover/item:bg-primary group-hover/item:text-white ${si == 0 && 'rounded-t-md'} ${si === item.subCat.length - 1 && 'rounded-b-md'}`}>
-                                            <span className='text-sm flex-1'>{subCitem.label}</span>
-                                            {item.subCat && <Anglerighticon className="size-3" />}
-                                        </Link>
-
-                                        <ul className='bg-white absolute z-10 top-0 left-[calc(100%-1px)] w-52 rounded-md border border-gray-300 shadow-1 divide-y divide-gray-300 hidden group-hover/item:block'>
-                                            {subCitem.cates?.map((catesItem, pi) =>
-                                                <li key={pi} className='relative'>
-                                                    <Link href={catesItem.url} className={`py-3 px-4 text-gray-600 flex ease-in-out duration-200 hover:bg-primary hover:text-white hover:indent-2 ${pi == 0 && 'rounded-t-md'} ${pi === subCitem.cates?.length - 1 && 'rounded-b-md'}`}>
-                                                        <span className='text-sm'>{catesItem.label}</span>
-                                                    </Link>
-                                                </li>
-                                            )}
-                                        </ul>
-
-                                    </li>
-                                )}
-                            </ul>
-                        </li>
-                    )
-                    )}
-
-                    {categoriesList.length > 8 &&
-                        <li>
-                            <button className='flex items-center py-3 px-5 text-gray-600 uppercase w-full' onClick={toggleNumber}>
-                                <span className='flex-1 text-left text-sm font-semibold font-dm'>See {showless > 8 ? 'Less' : 'All'} Categories</span>
-                                <Angledownicon className={`size-3 ease-in-out duration-200 ${showless > 8 && 'rotate-180'}`} />
-                            </button>
-                        </li>
-                    }
-                </ul>
-            </div>
-
-        </div>
+                {categoriesList.length > 8 &&
+                    <li>
+                        <button className='flex items-center py-3 text-white uppercase w-full' onClick={toggleNumber}>
+                            <span className='flex-1 text-left text-sm font-semibold font-dm'>See {showless > 8 ? 'Less' : 'All'} Categories</span>
+                            <Angledownicon className={`size-3 ease-in-out duration-200 ${showless > 8 && 'rotate-180'}`} />
+                        </button>
+                    </li>
+                }
+            </ul>
+        
     )
 }
 

@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
       <section className="bg-gray-12 text-white mt-5 bg-[#2c2c2c]">
         <div className="body-font pb-30p sm:pb-11 layout-wrapper px-4 xl:px-0">
           <div className="flex flex-wrap lg:flex-nowrap gap-7 pt-12 justify-start items-start container px-4 xl:px-5">
-            <div className="w-full sm:w-1/3 md:w-1/5 order-1">
+            <div className="w-full sm:w-1/3 lg:w-1/5 order-1">
               <div className="flex-shrink-0 md:mx-0 mx-auto">
                 <div className="flex">
                   <Link href="https://demo.martvill.techvill.net">
@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <div className="w-27% sm:w-1/3 md:w-1/5 flex flex-col justify-center order-2">
+            <div className="w-full sm:w-1/3 lg:w-1/5 flex flex-col justify-center order-2">
               <h4 className="mb-4 font-medium text-base font-dm break-all">
                 Useful Links
               </h4>
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="w-27% sm:w-1/3 md:w-1/5 flex flex-col justify-center order-3">
+            <div className="w-full sm:w-1/3 lg:w-1/5 flex flex-col justify-center order-3">
               <h4 className="mb-4 font-medium text-base font-dm break-all">
                 Categories
               </h4>
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="w-full sm:w-1/3 md:w-1/5 order-5">
+            <div className="w-full sm:w-1/3 lg:w-1/5 order-5">
               <h4 className="mb-4 font-medium text-base font-dm break-all">
                 Contact Us
               </h4>

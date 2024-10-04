@@ -47,7 +47,9 @@ const Productsdetails: React.FC<ProductCard> = ({
                     >
                         {slider.map((item: any, index: any) =>
                             <SwiperSlide key={index}>
+                                <div className="flex justify-center items-center">
                                 <Image src={item} alt='' width={1024} height={600} className='w-auto h-auto object-cover' />
+                                </div>
                             </SwiperSlide>
                         )}
                     </Swiper>

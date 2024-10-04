@@ -8,9 +8,9 @@ export const PromotionalSection: React.FC = () => {
     return (
         <>
             <section className="mb-10 md:mb-12">
-                <div className="relative h-full">
-                    <div className="flex justify-center items-center" >
-                        <Image src={'/images/gadget-town-banner.webp'} alt='gadget-town-banner.webp' height={270} width={1200} className='w-full h-auto object-cover' />
+                <div className="relative h-full overflow-hidden">
+                    <div className="flex justify-center items-center h-72" >
+                        <Image src={'/images/gadget-town-banner.webp'} alt='gadget-town-banner.webp' height={270} width={1200} className='w-auto max-w-none h-full object-cover' />
 
                     </div>
                     <div className="absolute inset-0 p-6 flex items-center font-dm">
@@ -23,7 +23,7 @@ export const PromotionalSection: React.FC = () => {
                                 Starting from only <span className="text-primary-2">$9.99</span>
                             </p>
                             <Link
-                                className="hover:bg-gray-600 hover:text-white text-gray-800 border-gray-600 relative gap-1 flex justify-center rounded-sm text-xs mt-13p items-center py-2 w-29 font-dm border"
+                                className="hover:bg-gray-600 hover:text-white text-gray-800 border-gray-600 relative gap-1 flex justify-center rounded-sm text-xs items-center py-2 w-29 font-dm border"
                                 href="#"
                                 title="Shop Electronic Devices at Gadget Town"
                             >
@@ -35,12 +35,12 @@ export const PromotionalSection: React.FC = () => {
                 </div>
             </section>
             <section className="my-10 md:my-12">
-                <div className="flex flex-col md:flex-row md:gap-12 gap-4">
+                <div className="flex flex-col md:grid md:grid-cols-2 gap-5 lg:gap-12 ">
                     {/* First Promotional Item */}
-                    <div className="md:w-1/2 w-full">
+                    <div className="w-full overflow-hidden">
                         <div className="relative">
-                            <div className="h-44 flex justify-center items-center" >
-                        <Image src={'/images/electrify-banner.webp'} alt='electrify-banner.webp' height={270} width={600} className='w-full h-auto object-cover' />
+                            <div className=" flex justify-center items-center h-72" >
+                        <Image src={'/images/electrify-banner.webp'} alt='electrify-banner.webp' height={270} width={600} className='w-auto max-w-none h-full object-cover' />
 
                                
                             </div>
@@ -64,10 +64,10 @@ export const PromotionalSection: React.FC = () => {
                         </div>
                     </div>
                     {/* Second Promotional Item */}
-                    <div className="md:w-1/2 w-full">
+                    <div className="w-full overflow-hidden">
                         <div className="relative">
-                        <div className="h-44 flex justify-center items-center" >
-                        <Image src={'/images/shoes-banner.webp'} alt='shoes-banner.webp' height={270} width={600} className='w-full h-auto object-cover' />
+                        <div className="flex justify-center items-center h-72" >
+                        <Image src={'/images/shoes-banner.webp'} alt='shoes-banner.webp' height={270} width={600} className='w-auto max-w-none h-full object-cover' />
 
                                
                             </div>

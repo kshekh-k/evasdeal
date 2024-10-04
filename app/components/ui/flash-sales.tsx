@@ -12,8 +12,8 @@ export const FlashSales: React.FC  = () => {
         
                 <h2 className="font-bold text-sm md:text-[22px] text-center text-gray-900 uppercase font-dm">Flash Sale</h2>
            
-            <div className="md:flex md:gap-5 gap-0">
-                <div className="md:w-322p w-full">
+                <div className="md:flex-row flex flex-col gap-5 ">
+                <div className="md:w-80 w-full">
                     <div className="relative bg-gray-100 rounded-md pb-0.5">
                         <div className="p-4">
                             <p className="text-xs rounded-sm font-medium text-gray-12 text-center px-1.5 py-1 bg-primary inline">
@@ -44,7 +44,7 @@ export const FlashSales: React.FC  = () => {
                     </div>
                 </div>
                 <div className="w-full">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5 md:mt-0">
                        <Productcard rating={3.5} slider={['/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', ]} categoryName='Home Appliances' thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" priceRange={true} minimum={40} maximum={100} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
                     </div>
                 </div>

@@ -3,24 +3,40 @@ import React from 'react'
 import Filters from './filters'
 import { Productcard } from '../../ui/product-card'
 import Sorting from './sorting'
-import { Gridicon, Listicon } from '@/app/icons'
+import { Adjustmenticon, Gridicon, Listicon } from '@/app/icons'
 import { Productlistviewcard } from '../../ui/product-listview-card'
+import Sidepanel from '../../ui/side-panel'
 
 function Shopcomponent() {
     const [view, setView] = React.useState(0)
+    const [sidePanelOpen, setSidePanelOpen] = React.useState(false)
+    React.useEffect(() => {
+        if (sidePanelOpen) {
+            document.body.classList.add('overflow-hidden');
+        } else {
+            document.body.classList.remove('overflow-hidden');
+        }
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, [sidePanelOpen]);
     return (
-        <div className='grid grid-cols-12 gap-5 pt-3'>
-            <div className='col-span-3'>
+    <>
+        <div className='md:grid md:grid-cols-12 md:gap-5 pt-3'>
+            <div className='md:col-span-3 hidden md:block'>
                 <Filters />
             </div>
-            <div className='col-span-9 flex flex-col gap-5'>
+            <div className='md:col-span-9 flex flex-col gap-5'>
                 <div className='flex justify-between gap-4'>
-                    <h3 className='text-xl text-gray-900'>179 products found</h3>
+                    <button onClick={()=>setSidePanelOpen(!sidePanelOpen)} className='bg-primary text-white rounded py-2 px-3 flex gap-1 font-medium font-dm text-sm'>
+                        <Adjustmenticon className="size-4" /> <span>Filters</span>
+                    </button>
+                    <h3 className='text-xl text-gray-900 hidden md:block'>179 products found</h3>
                     <div className="flex gap-2 items-center">
-                        <div className='w-44'>
+                        <div className='w-32 sm:w-44'>
                             <Sorting />
                         </div>
-                        <select className='border border-gray-300 py-1.5 px-2 w-14 text-sm text-gray-600 font-dm font-medium outline-none focus:ring-0 focus:border-primary appearance-none'>
+                        <select className='hidden md:block border border-gray-300 py-1.5 px-2 w-14 text-sm text-gray-600 font-dm font-medium outline-none focus:ring-0 focus:border-primary appearance-none'>
                             <option>12</option>
                             <option>24</option>
                             <option>48</option>
@@ -42,6 +58,14 @@ function Shopcomponent() {
                 )}
             </div>
         </div>
+        {sidePanelOpen && 
+        <Sidepanel onClick={()=>setSidePanelOpen(!sidePanelOpen)} >
+            <div className='overflow-auto max-h-screen'>
+            <Filters />
+            </div>
+        </Sidepanel>
+        }
+   </>
     )
 }
 
