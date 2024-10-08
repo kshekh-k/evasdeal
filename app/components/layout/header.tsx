@@ -60,18 +60,18 @@ export const Header: React.FC = () => {
                 </Topbar>
                 <div className="sticky top-0 z-40 md:bg-white bg-gray-12 max-h-24">
                     <div className="container p-4 xl:px-5 flex justify-between">
-                        {viewportWidth >= 768 &&
-                            <div className="h-9 3xl:w-63 pt-1p">
+                      
+                            <div className="h-9 3xl:w-63 hidden md:block">
                                 <Link href="/">
                                     <Image width={180} height={80} className="h-11 w-auto" src="/images/logo.png" alt="logo" />
                                 </Link>
                             </div>
-                        }
+                        
                         <div className="md:w-46% w-full md:ml-10 lg:ml-20 xl:ml-32">
                             <Search />
                         </div>
-                        {viewportWidth >= 768 &&
-                            <div className="flex items-end rev justify-end ml-4 lg:ml-10">
+                     
+                            <div className="hidden md:flex items-end rev justify-end ml-4 lg:ml-10">
                                 <ul className="flex -mt-1.5 space-x-3 lg:space-x-5">
                                     <li className="hidden md:block">
                                         {/* unauthenticated */}
@@ -123,7 +123,7 @@ export const Header: React.FC = () => {
 
                                 </ul>
                             </div>
-                        }
+                   
                     </div>
                 </div>
             </header>

@@ -6,8 +6,10 @@ import Sorting from './sorting'
 import { Adjustmenticon, Gridicon, Listicon } from '@/app/icons'
 import { Productlistviewcard } from '../../ui/product-listview-card'
 import Sidepanel from '../../ui/side-panel'
+import useViewportWidth from '@/app/hooks/use-viewport-width'
 
 function Shopcomponent() {
+    const viewportWidth = useViewportWidth();
     const [view, setView] = React.useState(0)
     const [sidePanelOpen, setSidePanelOpen] = React.useState(false)
     React.useEffect(() => {
@@ -24,11 +26,13 @@ function Shopcomponent() {
     <>
         <div className='md:grid md:grid-cols-12 md:gap-5 pt-3'>
             <div className='md:col-span-3 hidden md:block'>
-                <Filters />
+          
+                <Filters /> 
+             {!sidePanelOpen || viewportWidth >= 768 && <></>}
             </div>
             <div className='md:col-span-9 flex flex-col gap-5'>
                 <div className='flex justify-between gap-4'>
-                    <button onClick={()=>setSidePanelOpen(!sidePanelOpen)} className='bg-primary text-white rounded py-2 px-3 flex gap-1 font-medium font-dm text-sm'>
+                    <button onClick={()=>setSidePanelOpen(!sidePanelOpen)} className='bg-primary text-white rounded py-2 px-3 flex md:hidden gap-1 font-medium font-dm text-sm'>
                         <Adjustmenticon className="size-4" /> <span>Filters</span>
                     </button>
                     <h3 className='text-xl text-gray-900 hidden md:block'>179 products found</h3>
@@ -58,7 +62,7 @@ function Shopcomponent() {
                 )}
             </div>
         </div>
-        {sidePanelOpen && 
+        {sidePanelOpen && viewportWidth <= 767 && 
         <Sidepanel onClick={()=>setSidePanelOpen(!sidePanelOpen)} >
             <div className='overflow-auto max-h-screen'>
             <Filters />

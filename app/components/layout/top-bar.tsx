@@ -27,7 +27,7 @@ export const Topbar: React.FC<topbar> = ({ children }) => {
     <div className="bg-primary">
       <div className="container px-4 xl:px-5 pt-2p font-medium text-base flex justify-between items-center h-16 md:h-10 ">
       {viewportWidth <= 767 &&
-        <div className="flex items-center flex-1">
+        <div className="flex items-center flex-1 md:hidden">
           <button className='text-white' onClick={() => setMobileSidebarPanel(!mobileSidebarPanel)}>
             <Burgericon className='size-5' />
           </button>
@@ -39,9 +39,8 @@ export const Topbar: React.FC<topbar> = ({ children }) => {
           </div>
         </div>
 }
-        {viewportWidth >= 768 ?
-          <>
-            <div className="flex items-center">
+         
+            <div className="hidden md:flex items-center">
               <ul className="flex flex-col sm:flex-row text-xs gap-4 sm:gap-10 font-dm">
                 <li>
                   <Link href="#" className="w-fill flex gap-1 items-center" >
@@ -62,8 +61,7 @@ export const Topbar: React.FC<topbar> = ({ children }) => {
               </ul>
 
             </div>
-            <div className="flex items-center">
-              <div style={{ color: "#2c2c2c" }} className="hidden md:block">
+            <div className="hidden md:flex items-center">             
                 <ul className="flex flex-col sm:flex-row gap-4 sm:gap-7 font-dm">
                   <li className="flex items-center">
                     <Link
@@ -104,13 +102,13 @@ export const Topbar: React.FC<topbar> = ({ children }) => {
 
                   </button>
                 </ul>
-              </div>
+          
             </div>
-          </> :
-          <ul className="flex -mt-1.5 space-x-3 lg:space-x-5">
+         
+          <ul className="flex md:hidden -mt-1.5 space-x-3 lg:space-x-5">
             {children}
           </ul>
-        }
+       
 
       </div>
 
