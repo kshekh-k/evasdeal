@@ -1,10 +1,7 @@
-
-import Breadcrumb from '../components/layout/breadcrumb'
-import Layout from '../components/layout/layout';
-import Shopcomponent from '../components/pages/shop/shop'
-const paths = [
-  { name: 'Shop', href: '/shop' },
-];
+import Breadcrumb from "../components/layout/breadcrumb";
+import Layout from "../components/layout/layout";
+import Shopcomponent from "../components/pages/shop/shop";
+const paths = [{ name: "Shop", href: "/shop" }];
 const Shop = () => {
   return (
     <>
@@ -13,7 +10,7 @@ const Shop = () => {
         <Shopcomponent />
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;

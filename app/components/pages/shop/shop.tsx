@@ -1,17 +1,17 @@
-'use client'
-import React from 'react'
-import Filters from './filters'
-import { Productcard } from '../../ui/product-card'
-import Sorting from './sorting'
-import { Adjustmenticon, Gridicon, Listicon } from '@/app/icons'
-import { Productlistviewcard } from '../../ui/product-listview-card'
-import Sidepanel from '../../ui/side-panel'
-import useViewportWidth from '@/app/hooks/use-viewport-width'
-import useSwr from 'swr';
+"use client";
+import React from "react";
+import Filters from "./filters";
+import { Productcard } from "../../ui/product-card";
+import Sorting from "./sorting";
+import { Adjustmenticon, Gridicon, Listicon } from "@/app/icons";
+import { Productlistviewcard } from "../../ui/product-listview-card";
+import Sidepanel from "../../ui/side-panel";
+import useViewportWidth from "@/app/hooks/use-viewport-width";
+import useSwr from "swr";
 // import ProductItem from '../../product-item';
-import ProductsLoading from '../../ui/loading';
-import { ProductTypeList } from '@/types';
-import ProductItem from './product-item'
+import ProductsLoading from "../../ui/loading";
+import { ProductTypeList } from "@/types";
+import ProductItem from "./product-item";
 function Shopcomponent() {
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data, error } = useSwr('/api/products', fetcher);
@@ -96,4 +96,4 @@ function Shopcomponent() {
     )
 }
 
-export default Shopcomponent
+export default Shopcomponent;
