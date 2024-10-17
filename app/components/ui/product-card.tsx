@@ -16,6 +16,7 @@ import Ratings from "./ratings";
 import { Quickview } from "./quick-view";
 import Counter from "./counter";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass } from 'swiper'; 
 import "swiper/css";
 import "swiper/css/navigation";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
@@ -57,7 +58,7 @@ export const Productcard: React.FC<ProductCard> = ({
 }) => {
   const dispatch = useDispatch();
   const { favProducts } = useSelector((state: RootState) => state.user);
-  const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = React.useState<SwiperClass | null>(null);
   const [quickviewmodal, setSuickviewmodal] = React.useState(false);
 
   const isFavourite = some(favProducts, (productId) => productId === id);
@@ -275,7 +276,7 @@ export const Productcard: React.FC<ProductCard> = ({
                 </p>
               </div>
               <h2 className="text-xl font-dm font-medium text-left text-gray-700">
-                {productName}
+                {name}
               </h2>
               <div className="flex gap-4 items-center">
                 <button className="flex text-gray-500 relative hover:text-primary">

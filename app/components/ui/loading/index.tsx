@@ -2,14 +2,14 @@ import ProductItemLoading from './loader';
 
 const ProductsLoading = () => {
   return (
-    <section className="products-list">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-5"> 
       <ProductItemLoading />
       <ProductItemLoading />
       <ProductItemLoading />
       <ProductItemLoading />
       <ProductItemLoading />
       <ProductItemLoading />
-    </section>
+    </div>
   );
 };
   

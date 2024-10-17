@@ -179,6 +179,15 @@ const config: Config = {
         "1425p": "1425px",
         },
 
+
+        keyframes: {
+          shimmer: {
+            "100%": {
+              "transform": "translateX(100%)",
+            },
+          }
+        }
+
     },
 
 

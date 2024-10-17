@@ -1,6 +1,6 @@
 const ProductItemLoading = () => (
-  <a href="#" className="product-item product-item--loading">
-    <div className="product__image">
+  <div className="border border-gray-300 p-5 rounded product-item--loading">
+    <div className="h-40 w-full bg-gray-200 rounded">
 
     </div>
     
@@ -10,7 +10,7 @@ const ProductItemLoading = () => (
         <h4></h4>
       </div>
     </div>
-  </a>
+  </div>
 );
 
 
