@@ -1,5 +1,5 @@
 'use client'
-import { Anglelefticon, Anglerighticon, Compareicon, Hearticon, Shareicon, Shoppingbagicon, Staricon } from '@/app/icons'
+import { Anglelefticon, Anglerighticon, Compareicon, Heartfillicon, Hearticon, Shareicon, Shoppingbagicon, Staricon } from '@/app/icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -10,27 +10,44 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/store/old-index';
+import { some } from 'lodash';
+import { toggleFavProduct } from '@/store/reducers/user'
 interface ProductCard {
-    thumb?: string,
-    productName?: string,
+    images?: any[],
+    name?: string,
     categoryName?: string,
     SKU?: number,
-    price?: number,
+    id?:any,
+    price?: any,
     priceRange?: boolean,
     minimum?: number,
     maximum?: number,
     discount?: number,
     rating?: number,
+    color?:any,
     discription?: string,
     slider?: any[]
 
 }
 export const Productcard: React.FC<ProductCard> = ({
-    thumb, productName, categoryName, SKU, price = 1, priceRange = false, minimum, maximum, discount = 0, rating, discription, slider = []
+    images, name, categoryName, SKU, id, price = 1, priceRange = false, minimum, maximum, discount = 0, rating, color, discription, slider = []
 }) => {
+    const dispatch = useDispatch();
+    const { favProducts } = useSelector((state: RootState) => state.user);
     const [thumbsSwiper, setThumbsSwiper] = React.useState(null)
     const [quickviewmodal, setSuickviewmodal] = React.useState(false)
+    
+  const isFavourite = some(favProducts, productId => productId === id);
+
+  const toggleFav = () => {
+    dispatch(toggleFavProduct(
+      { 
+        id,
+      }
+    ))
+  }
     React.useEffect(() => {
         if (quickviewmodal) {
             document.body.classList.add('overflow-hidden');
@@ -47,8 +64,8 @@ export const Productcard: React.FC<ProductCard> = ({
             <div className='flex flex-col group'>
                 <div className="border rounded-md relative ">
                     <div className="h-48 flex justify-center items-center">
-                        <Link href="#" className="w-full h-full">
-                            <Image className="w-full h-full object-cover rounded-md neg-transition-scale" src={`${thumb}`} alt="Image" width={200} height={200} />
+                        <Link href={`/product/${id}`} className="w-full h-full">
+                            <Image className="w-full h-full object-cover rounded-md neg-transition-scale" src={images ? images[0] : ''} alt="Image" width={200} height={200} />
                         </Link>
                     </div>
                     <div className="flex flex-col gap-1 w-16 absolute top-2.5 left-2.5 right-2.5">
@@ -69,8 +86,8 @@ export const Productcard: React.FC<ProductCard> = ({
 
                                 </button>
 
-                                <button className="h-6 w-6 flex justify-center items-center p-1  text-gray-400 relative hover:bg-primary hover:text-white border border-gray-2 rounded-full bg-white">
-                                    <Hearticon className="size-3" />
+                                <button onClick={toggleFav} className="h-6 w-6 flex justify-center items-center p-1  text-gray-400 relative hover:bg-primary hover:text-white border border-gray-2 rounded-full bg-white">
+                                <Heartfillicon className="size-3" />
                                 </button>
 
                                 <button className="h-6 w-6 flex justify-center items-center p-1 text-gray-400 bg-white hover:bg-primary hover:text-white border border-gray-2 rounded-full">
@@ -95,7 +112,7 @@ export const Productcard: React.FC<ProductCard> = ({
                 <div className="sm:text-center flex flex-col pt-3">
                     <p className='text-sm text-gray-400 font-medium font-dm text-center'>{categoryName}</p>
 
-                    <h2 className="text-lg sm:text-xl sm:leading-snug leading-snug font-dm font-medium text-center pt-1"><Link href="#" className='text-gray-700 hover:text-primary ease-in-out duration-200'>{productName}</Link></h2>
+                    <h2 className="text-lg sm:text-xl sm:leading-snug leading-snug font-dm font-medium text-center pt-1"><Link href={`/product/${id}`} className='text-gray-700 hover:text-primary ease-in-out duration-200'>{name}</Link></h2>
                     <div className="flex justify-center pt-2">
                         <Ratings rating={rating} reviewtext={'hidden xl:inline-block'} />
                     </div>
