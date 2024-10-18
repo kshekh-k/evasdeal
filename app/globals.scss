@@ -39,3 +39,10 @@ body {
     text-wrap: balance;
   }
 }
+.thumnailnav{
+.swiper-slide-thumb-active{
+  &>div{
+    @apply border-primary
+  }
+}
+}

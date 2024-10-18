@@ -18,9 +18,9 @@ export const Quickview: React.FC<quickview> = ({children, onClick}) => {
             <Crossicon className="size-3" />
           </button>
           <div className="relative sm:p-3">           
-            <div className="overflow-auto max-h-[calc(100vh-150px)]">
+            
                 {children}
-            </div>
+            
           </div>
         </section>
       </div>

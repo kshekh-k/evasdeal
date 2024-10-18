@@ -7,16 +7,15 @@ import { Adjustmenticon, Gridicon, Listicon } from "@/app/icons";
 import { Productlistviewcard } from "../../ui/product-listview-card";
 import Sidepanel from "../../ui/side-panel";
 import useViewportWidth from "@/app/hooks/use-viewport-width";
-import useSwr from "swr";
-// import ProductItem from '../../product-item';
+import useSwr from "swr"; 
 import ProductsLoading from "../../ui/loading";
-import { ProductTypeList } from "@/types";
-import ProductItem from "./product-item";
+import { ProductTypeList } from "@/types"; 
 function Shopcomponent() {
+   
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data, error } = useSwr('/api/products', fetcher);
+ 
 
-  
     const viewportWidth = useViewportWidth();
     const [view, setView] = React.useState(0)
     const [sidePanelOpen, setSidePanelOpen] = React.useState(false)
@@ -30,6 +29,14 @@ function Shopcomponent() {
             document.body.classList.remove('overflow-hidden');
         };
     }, [sidePanelOpen]);
+
+
+
+ 
+
+   
+
+
     return (
         <>
             <div className='md:grid md:grid-cols-12 md:gap-5 pt-3'>
@@ -59,30 +66,26 @@ function Shopcomponent() {
                             </div>
                         </div>
                     </div>
-                    {/*<ProductItem 
-              id={item.id} 
-              name={item.name}
-              price={item.price}
-              color={item.color}
-              currentPrice={item.currentPrice}
-              key={item.id}
-              images={item.images} 
-            /> <Productcard rating={3.5} slider={['/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', ]} categoryName='Home Appliances' thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" priceRange={true} minimum={40} maximum={100} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'}  /> */}
-            <div className='mt-5 md:mt-0'>
-                    {view == 0 ? (<>
-                        {data ? 
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">                           
-                                {data.map((item: ProductTypeList) => (
-                                    <Productcard key={item.id} id={item.id} rating={3.5} slider={['/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png',]} categoryName='Home Appliances' images={item.images} name={item.name} color={item.color} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
-                                ))}
-                          </div> : <ProductsLoading />}
-                       
-                    </>) : (
-                        <div className='flex flex-col gap-5'>
-                            <Productlistviewcard rating={3.5} slider={['/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png',]} categoryName='Home Appliances' thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" priceRange={true} minimum={40} maximum={100} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
-                        </div>
-                    )}
-                </div>
+
+                    <div className='mt-5 md:mt-0'>
+                        {view == 0 ? (<>
+                            {data ?
+                                <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+                                    {data.map((item: ProductTypeList) => ( 
+                                        <Productcard key={item.id} id={item.id} SKU={item.SKU} sizes={item.sizes} rating={item.rating} slider={item.images} discount={item.discount} categoryName={item.category} images={item.images} name={item.name} colors={item.colors} price={item.price} quantityAvailable={item.quantityAvailable} priceRange={item.priceRange} minimum={item.minimum} maximum={item.maximum} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
+                                    ))}
+                                </div> 
+                                : 
+                                <ProductsLoading /> }
+
+                        </>) : (
+                            <div className='flex flex-col gap-10'>
+                                  {data.map((item: ProductTypeList) => ( 
+                                <Productlistviewcard key={item.id} id={item.id} SKU={item.SKU} sizes={item.sizes} rating={item.rating} slider={item.images} discount={item.discount} categoryName={item.category} images={item.images} name={item.name} colors={item.colors} price={item.price} quantityAvailable={item.quantityAvailable} priceRange={item.priceRange} minimum={item.minimum} maximum={item.maximum} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
+                            ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
             {sidePanelOpen && viewportWidth <= 767 &&

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito, DM_Sans } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 import StoreProvider from "./store-provider";
 
 const nunito = Nunito({

@@ -3,8 +3,16 @@ import Image from 'next/image'
 import React from 'react'
 import { Productcard } from './product-card'  
 import Ratings from './ratings'
-
+import useSwr from "swr"; 
+import ProductsLoading from "./loading";
+import { ProductTypeList } from "@/types"; 
 export const FlashSales: React.FC  = () => {
+
+    const fetcher = (url: string) => fetch(url).then((res) => res.json());
+    const { data, error } = useSwr('/api/products', fetcher);
+
+
+
     return (
         <>
       
@@ -43,10 +51,15 @@ export const FlashSales: React.FC  = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5 md:mt-0">
-                       <Productcard rating={3.5} slider={['/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', '/images/product.png', ]} categoryName='Home Appliances' thumb="/images/product-1.webp" productName="Waist straight Slouchy jeans" priceRange={true} minimum={40} maximum={100} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
+                <div className="w-full mt-5 md:mt-0">
+                {data ?
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+                    {data.slice().map((item: ProductTypeList) => ( 
+                                        <Productcard key={item.id} id={item.id} SKU={item.SKU} sizes={item.sizes} rating={item.rating} slider={item.images} discount={item.discount} categoryName={item.category} images={item.images} name={item.name} colors={item.colors} price={item.price} quantityAvailable={item.quantityAvailable} priceRange={item.priceRange} minimum={item.minimum} maximum={item.maximum} discription={'Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.'} />
+                                    ))}
                     </div>
+                    : 
+                                <ProductsLoading /> }
                 </div>
 
             </div>

@@ -1,3 +1,10 @@
+export type Categories = {
+  id?: number;
+  name?: string;
+  icon?: any;
+  url?: string;
+}
+
 export type VotesType = {
   count: number;
   value: number;
@@ -34,11 +41,20 @@ export type ProductType = {
 export type ProductTypeList = {
   id: string;
   name: string;
-  price: string;
-  color: string;
-  images: string[];
-  discount?: string;
-  currentPrice?: number;
+  price: number; 
+  images: string[];  
+  category?: string;
+  SKU?: number;  
+  priceRange?: boolean;
+  minimum?: number;
+  maximum?: number;
+  discount?: number;
+  rating?: number;
+  sizes?: string[];
+  colors?: string[];
+  discription?: string;
+  slider?: any[];
+  quantityAvailable?: number; 
 }
 
 export type ProductStoreType = {

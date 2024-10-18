@@ -10,12 +10,14 @@ interface input {
   className?: string,
   readOnly?: boolean,
   required?: boolean,   
+  min?: number,   
+  max?: number,   
   Icon?: React.ElementType,
   iconClass?: string,
   onChange?:(event: React.ChangeEvent<HTMLInputElement>) => void,
   
 }
-const Input: React.FC<input> = ({ type, name, id, value, label, placeholder, className, readOnly, required,  Icon, iconClass, onChange }) => {
+const Input: React.FC<input> = ({ type, name, id, value, label, placeholder, className, readOnly, required, min, max, Icon, iconClass, onChange }) => {
   const [selectedOption, setSelectedOption] = React.useState<any>()
   const ref = React.useRef<HTMLInputElement>(null);
   return (
@@ -32,6 +34,8 @@ const Input: React.FC<input> = ({ type, name, id, value, label, placeholder, cla
         placeholder={placeholder}
         readOnly={readOnly}
         required={required}
+        min={min}
+        max={max}
         ref={ref}
       />
       {Icon &&
