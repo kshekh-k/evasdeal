@@ -15,6 +15,7 @@ import Ratings from './ratings'
 import { Quickview } from './quick-view'
 import Counter from './counter'
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass } from 'swiper';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

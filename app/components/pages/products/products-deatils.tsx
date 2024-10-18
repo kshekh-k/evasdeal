@@ -3,6 +3,7 @@ import React from 'react'
 import Counter from '../../ui/counter'
 import Ratings from '../../ui/ratings'
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass } from 'swiper';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -28,7 +29,7 @@ interface ProductCard {
 const Productsdetails: React.FC<ProductCard> = ({
     productName, categoryName, SKU, price = 1, priceRange = false, minimum, maximum, discount = 0, rating, discription, slider = sliders
 }) => {
-    const [thumbsSwiper, setThumbsSwiper] = React.useState(null)
+    const [thumbsSwiper, setThumbsSwiper] = React.useState<SwiperClass | null>(null)
     return (
         <>
 

@@ -12,8 +12,7 @@ export const FurnitureZone: React.FC = () => {
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data, error } = useSwr('/api/products', fetcher);
     return (
-        <section className=" my-10 md:my-12" >
-
+        <section className="my-10 md:my-12" >
             <div className="flex md:justify-between justify-center items-center mb-2.5 md:mb-5">
                 <h2 className="font-bold text-sm md:text-[22px] text-gray-900 uppercase dm-bold">Furniture ZONE</h2>
                 <Link
@@ -22,7 +21,6 @@ export const FurnitureZone: React.FC = () => {
                 >
                     <span className="mr-2">See More</span>
                     <Arrowicon className="size-3" />
-
                 </Link>
             </div>
             <div className="md:flex md:gap-5 gap-0">
@@ -36,8 +34,6 @@ export const FurnitureZone: React.FC = () => {
                                     <p className="text-gray-900 font-medium text-lg uppercase mb-1.5">On Our</p>
                                 </div>
                                 <p className="text-gray-12 font-bold text-2xl -mt-1.5 uppercase">Furnitures</p>
-
-
                                 <Link
                                     className="hover:bg-gray-600 hover:text-white text-gray-800 border-gray-600 relative gap-1 flex justify-center rounded-sm text-xs mt-13p items-center py-2 w-29 font-dm border"
                                     href="#"
@@ -59,11 +55,11 @@ export const FurnitureZone: React.FC = () => {
                                 ))}
                             </div>
                             :
-                            <ProductsLoading />}
+                            <ProductsLoading />
+                            }
                     </div>
                 </div>
             </div>
-
         </section>
     );
 };
